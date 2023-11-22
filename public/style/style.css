@@ -3,6 +3,7 @@
 body {
     background-color: #141c52;
 }
+
 header h2 {
     color: #fff;
     font-family: Syncopate;
@@ -12,9 +13,13 @@ header h2 {
     line-height: normal;
     margin-top: 10px;
 }
+
 header {
     margin-top: 10px;
 }
+
+
+
 .nav-link {
     color: #fff;
     font-family: Jura;
@@ -22,4 +27,74 @@ header {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
+
+.main-text {
+    margin: 250px 80px;
+    max-width: 500px;
+}
+
+.main-text>h1 {
+    color: #FFF;
+    font-family: Syncopate;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.main-text>h3 {
+    color: #FFF;
+    font-family: Jura;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.all-config {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.all-config>h1 {
+    color: #FFF;
+    font-family: Jura;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.card {
+    width: 250px;
+    border-radius: 43px;
+    background: #FFF;
+}
+
+.card>img {
+    padding: 15px 28px 0 28px;
+}
+
+.card-body {
+    color: #000;
+    font-family: Jura;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+
+}
+
+.small-text {
+    color: rgba(0, 0, 0, 0.50);
+    font-family: Jura;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+}
+card-text-cust{
+    margin-bottom: 60px;
+}
+.card-text-cust {
+    
 }

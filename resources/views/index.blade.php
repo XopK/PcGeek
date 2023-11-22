@@ -33,10 +33,31 @@
             </ul>
         </header>
 
-        <main>
-            <h1>PcGeek</h1>
-            <h3>Собери свой компьютер сам</h3>
+        <main class="d-flex row">
+            <div class="main-text col">
+                <h1>PcGeek</h1>
+                <h3>Собери свой компьютер сам</h3>
+            </div>
+            <img class="col" src="/images/125bc2846415e8d1db2e928a68b325f9.png"
+                alt="125bc2846415e8d1db2e928a68b325f9.png">
         </main>
+        <div class="all-config row">
+            <h1>Готовые сборки</h1>
+            <div class="configs">
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/f8cd288b4ff935d48ea60b5fa0fb2933.png" class="card-img-top"
+                        alt="f8cd288b4ff935d48ea60b5fa0fb2933.png">
+                    <div class="card-body">
+                        <h3 class="card-text-cust">lUMEN PRO</h3>
+                        <span class="small-text">автор: Danya293</span>
+                        <p class="card-text-cust">Intel core i5/i7</p>
+                        <p class="card-text-cust">NVIDIA RTX 3060</p>
+                        <p class="card-text-cust">32gb DDR4 ОЗУ</p>   
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </body>
 
