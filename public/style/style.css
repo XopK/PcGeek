@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap");
+
+body {
+    background-color: #141c52;
+}
+header h2 {
+    color: #fff;
+    font-family: Syncopate;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 10px;
+}
+header {
+    margin-top: 10px;
+}
+.nav-link {
+    color: #fff;
+    font-family: Jura;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
