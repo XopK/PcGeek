@@ -1,9 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap");
 
 body {
-    background-color: #141c52;
+    background: rgb(20, 28, 82);
+    background: linear-gradient(
+        180deg,
+        rgba(20, 28, 82, 1) 0%,
+        rgba(5, 8, 27, 1) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
 header h2 {
     color: #fff;
     font-family: Syncopate;
@@ -17,8 +23,6 @@ header h2 {
 header {
     margin-top: 10px;
 }
-
-
 
 .nav-link {
     color: #fff;
@@ -34,8 +38,8 @@ header {
     max-width: 500px;
 }
 
-.main-text>h1 {
-    color: #FFF;
+.main-text > h1 {
+    color: #fff;
     font-family: Syncopate;
     font-size: 64px;
     font-style: normal;
@@ -43,8 +47,8 @@ header {
     line-height: normal;
 }
 
-.main-text>h3 {
-    color: #FFF;
+.main-text > h3 {
+    color: #fff;
     font-family: Jura;
     font-size: 40px;
     font-style: normal;
@@ -54,11 +58,11 @@ header {
 
 .all-config {
     text-align: center;
-    margin-top: 150px;
+    margin-top: 180px;
 }
 
-.all-config>h1 {
-    color: #FFF;
+.all-config > h1 {
+    color: #fff;
     font-family: Jura;
     font-size: 32px;
     font-style: normal;
@@ -67,31 +71,34 @@ header {
 }
 
 .card {
-    width: 250px;
     border-radius: 43px;
-    background: #FFF;
+    background: #fff;
 }
 
-.card>img {
-    padding: 15px 28px 0 28px;
+.card > img {
+    padding: 13px 26px 0 26px;
 }
 
 .card-body {
     color: #000;
     font-family: Jura;
-    font-size: 20px;
+}
+.card-body > h1 {
+    font-size: 21px;
     font-style: normal;
     font-weight: 700;
-
+    line-height: normal;
 }
-
-.small-text {
-    color: rgba(0, 0, 0, 0.50);
-    font-family: Jura;
+.card-body > p {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.card-body > h4 {
     font-size: 17px;
     font-style: normal;
     font-weight: 700;
-}
-card-text-cust{
-    margin-bottom: 60px;
+    line-height: normal;
 }

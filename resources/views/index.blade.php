@@ -43,19 +43,89 @@
         </main>
         <div class="all-config row">
             <h1>Готовые сборки</h1>
-            <div class="configs">
-                <div class="card" style="width: 18rem;">
-                    <img src="/images/f8cd288b4ff935d48ea60b5fa0fb2933.png" class="card-img-top"
-                        alt="f8cd288b4ff935d48ea60b5fa0fb2933.png">
-                    <div class="card-body">
-                        <h3 class="card-text-cust">lUMEN PRO</h3>
-                        <span class="small-text">автор: Danya293</span>
-                        <p class="card-text-cust">Intel core i5/i7</p>
-                        <p class="card-text-cust">NVIDIA RTX 3060</p>
-                        <p class="card-text-cust">32gb DDR4 ОЗУ</p>   
+            <div class="configs" style="margin: 40px 0">
+                <div class="d-flex justify-content-center row" style="gap: 70px; flex-wrap: wrap; align-items: center">
+                    <div class="card col-3" style="width: 16rem;">
+                        <img src="/images/f8cd288b4ff935d48ea60b5fa0fb2933.png" class="card-img-top"
+                            alt="f8cd288b4ff935d48ea60b5fa0fb2933.png">
+                        <div class="card-body">
+                            <h1>lUMEN PRO</h1>
+                            <p>автор: Danya253</p>
+                            <h4>Intel core i5/i7</h4>
+                            <h4>NVIDIA RTX 3060</h4>
+                            <h4>32gb DDR4 ОЗУ</h4>
+                            <a href="#" style="margin-top: 10px"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 21 21" fill="none">
+                                <circle cx="10.6244" cy="10.9263" r="7.52765" stroke="black" stroke-width="2"/>
+                                <path d="M11.0426 7.16247C11.0426 7.39343 10.8553 7.58067 10.6244 7.58067C10.3934 7.58067 10.2062 7.39343 10.2062 7.16247C10.2062 6.9315 10.3934 6.74426 10.6244 6.74426C10.8553 6.74426 11.0426 6.9315 11.0426 7.16247Z" fill="black" stroke="black"/>
+                                <path d="M10.6244 15.1083V9.25348" stroke="black" stroke-width="2"/>
+                              </svg></a>
+                        </div>
+                    </div>
+                    <div class="card col-3" style="width: 16rem;">
+                        <img src="/images/f8cd288b4ff935d48ea60b5fa0fb2933.png" class="card-img-top"
+                            alt="f8cd288b4ff935d48ea60b5fa0fb2933.png">
+                        <div class="card-body">
+                            <h1>lUMEN PRO</h1>
+                            <p>автор: Danya253</p>
+                            <h4>Intel core i5/i7</h4>
+                            <h4>NVIDIA RTX 3060</h4>
+                            <h4>32gb DDR4 ОЗУ</h4>
+                            <a href="#" style="margin-top: 10px"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 21 21" fill="none">
+                                <circle cx="10.6244" cy="10.9263" r="7.52765" stroke="black" stroke-width="2"/>
+                                <path d="M11.0426 7.16247C11.0426 7.39343 10.8553 7.58067 10.6244 7.58067C10.3934 7.58067 10.2062 7.39343 10.2062 7.16247C10.2062 6.9315 10.3934 6.74426 10.6244 6.74426C10.8553 6.74426 11.0426 6.9315 11.0426 7.16247Z" fill="black" stroke="black"/>
+                                <path d="M10.6244 15.1083V9.25348" stroke="black" stroke-width="2"/>
+                              </svg></a>
+                        </div>
+                    </div>
+                    <div class="card col-3" style="width: 16rem;">
+                        <img src="/images/f8cd288b4ff935d48ea60b5fa0fb2933.png" class="card-img-top"
+                            alt="f8cd288b4ff935d48ea60b5fa0fb2933.png">
+                        <div class="card-body">
+                            <h1>lUMEN PRO</h1>
+                            <p>автор: Danya253</p>
+                            <h4>Intel core i5/i7</h4>
+                            <h4>NVIDIA RTX 3060</h4>
+                            <h4>32gb DDR4 ОЗУ</h4>
+                            <a href="#" style="margin-top: 10px"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 21 21" fill="none">
+                                <circle cx="10.6244" cy="10.9263" r="7.52765" stroke="black" stroke-width="2"/>
+                                <path d="M11.0426 7.16247C11.0426 7.39343 10.8553 7.58067 10.6244 7.58067C10.3934 7.58067 10.2062 7.39343 10.2062 7.16247C10.2062 6.9315 10.3934 6.74426 10.6244 6.74426C10.8553 6.74426 11.0426 6.9315 11.0426 7.16247Z" fill="black" stroke="black"/>
+                                <path d="M10.6244 15.1083V9.25348" stroke="black" stroke-width="2"/>
+                              </svg></a>
+                        </div>
+                    </div>
+                    <div class="card col-3" style="width: 16rem;">
+                        <img src="/images/f8cd288b4ff935d48ea60b5fa0fb2933.png" class="card-img-top"
+                            alt="f8cd288b4ff935d48ea60b5fa0fb2933.png">
+                        <div class="card-body">
+                            <h1>lUMEN PRO</h1>
+                            <p>автор: Danya253</p>
+                            <h4>Intel core i5/i7</h4>
+                            <h4>NVIDIA RTX 3060</h4>
+                            <h4>32gb DDR4 ОЗУ</h4>
+                            <a href="#" style="margin-top: 10px"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 21 21" fill="none">
+                                <circle cx="10.6244" cy="10.9263" r="7.52765" stroke="black" stroke-width="2"/>
+                                <path d="M11.0426 7.16247C11.0426 7.39343 10.8553 7.58067 10.6244 7.58067C10.3934 7.58067 10.2062 7.39343 10.2062 7.16247C10.2062 6.9315 10.3934 6.74426 10.6244 6.74426C10.8553 6.74426 11.0426 6.9315 11.0426 7.16247Z" fill="black" stroke="black"/>
+                                <path d="M10.6244 15.1083V9.25348" stroke="black" stroke-width="2"/>
+                              </svg></a>
+                        </div>
+                    </div>
+                    <div class="card col-3" style="width: 16rem;">
+                        <img src="/images/f8cd288b4ff935d48ea60b5fa0fb2933.png" class="card-img-top"
+                            alt="f8cd288b4ff935d48ea60b5fa0fb2933.png">
+                        <div class="card-body">
+                            <h1>lUMEN PRO</h1>
+                            <p>автор: Danya253</p>
+                            <h4>Intel core i5/i7</h4>
+                            <h4>NVIDIA RTX 3060</h4>
+                            <h4>32gb DDR4 ОЗУ</h4>
+                            <a href="#" style="margin-top: 10px"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 21 21" fill="none">
+                                <circle cx="10.6244" cy="10.9263" r="7.52765" stroke="black" stroke-width="2"/>
+                                <path d="M11.0426 7.16247C11.0426 7.39343 10.8553 7.58067 10.6244 7.58067C10.3934 7.58067 10.2062 7.39343 10.2062 7.16247C10.2062 6.9315 10.3934 6.74426 10.6244 6.74426C10.8553 6.74426 11.0426 6.9315 11.0426 7.16247Z" fill="black" stroke="black"/>
+                                <path d="M10.6244 15.1083V9.25348" stroke="black" stroke-width="2"/>
+                              </svg></a>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
