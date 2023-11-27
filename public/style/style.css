@@ -102,3 +102,106 @@ header {
     font-weight: 700;
     line-height: normal;
 }
+.forum {
+    text-align: center;
+    margin-top: 100px;
+}
+.forum > h1 {
+    color: #fff;
+    font-family: Jura;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.forum > a > h2 {
+    color: #fff;
+
+    font-family: Jura;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    
+}
+.forum-block {
+    margin-top: 50px;
+    text-align: left;
+    color: #000;
+    font-family: Jura;
+    font-size: 24px;
+    font-style: normal;
+    line-height: normal;
+}
+.forum-card > p {
+    color: #000;
+    font-family: Jura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.forum-card > h3 {
+    color: #000;
+    font-family: Jura;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.forum-card > span {
+    color: rgba(0, 0, 0, 0.5);
+    font-family: Jura;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.forum-card {
+    padding: 20px;
+}
+.forum-list {
+    margin-bottom: 30px;
+}
+.forum-block > a {
+    text-decoration: none;
+}
+.your-pc {
+    text-align: center;
+    margin-top: 100px;
+}
+.your-pc > h1 {
+    color: #fff;
+    font-family: Jura;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.your-photo {
+    border-radius: 37px;
+    border: 6px solid #253189;
+    background-image: url(/images/hyperdesk_photo_05.jpg);
+    width: 100%;
+    height: 618px;
+    text-align: center;
+}
+.text-photo {
+    position: absolute;
+    text-align: left;
+    padding: 100px;
+    width: 920px;
+
+    color: #fff;
+    font-family: Jura;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.black {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+}
+.your-photo > button {
+}
