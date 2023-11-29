@@ -16,23 +16,7 @@
 
 <body>
     <div class="container">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
-            <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <h2>PcGeek</h2>
-            </a>
-
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link">Главная</a></li>
-                <li><a href="#" class="nav-link">Форум</a></li>
-                <li><a href="#" class="nav-link">Конструктор</a></li>
-            </ul>
-
-            <ul class="nav col-md-auto d-flex text-end">
-                <li><a href="#" class="nav-link">Регистрация</a></li>
-                <li><a href="#" class="nav-link">Вход</a></li>
-            </ul>
-        </header>
-
+        <x-header></x-header>
         <main class="d-flex row">
             <div class="main-text col">
                 <h1>PcGeek</h1>
@@ -246,7 +230,7 @@
                     </div>
                 </a>
             </div>
-            <a style="text-decoration: none;" href="#">
+            <a style="text-decoration: none;" class="more" href="#">
                 <h2>Ещё <svg xmlns="http://www.w3.org/2000/svg" width="30" height="18" viewBox="0 0 30 18"
                         fill="none">
                         <path d="M28 2L15 15L2 2" stroke="white" stroke-width="3" />
@@ -260,10 +244,11 @@
                     <h3>На нашем сайте вы можете собрать свой компьютер и поделиться своей сборкой с пользователями
                     </h3>
                 </div>
-                <button class="btn btn-primary">Попробовать</button>
+                <button class="btn btn-cust">Попробовать</button>
             </div>
         </div>
     </div>
+    <x-footer></x-footer>
 </body>
 
 </html>

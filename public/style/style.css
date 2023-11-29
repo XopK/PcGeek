@@ -74,7 +74,6 @@ header {
     border-radius: 43px;
     background: #fff;
 }
-
 .card > img {
     padding: 13px 26px 0 26px;
 }
@@ -116,13 +115,11 @@ header {
 }
 .forum > a > h2 {
     color: #fff;
-
     font-family: Jura;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    
 }
 .forum-block {
     margin-top: 50px;
@@ -158,7 +155,7 @@ header {
     line-height: normal;
 }
 .forum-card {
-    padding: 20px;
+    padding: 20px 40px;
 }
 .forum-list {
     margin-bottom: 30px;
@@ -190,8 +187,7 @@ header {
     position: absolute;
     text-align: left;
     padding: 100px;
-    width: 920px;
-
+    max-width: 920px;
     color: #fff;
     font-family: Jura;
     font-size: 40px;
@@ -204,4 +200,62 @@ header {
     background-blend-mode: multiply;
 }
 .your-photo > button {
+    position: relative;
+    top: 500px;
+}
+.btn-cust {
+    color: #fff;
+    font-family: Jura;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 20px;
+    background: #253189;
+    padding: 10px 30px;
+    transition: 0.4s;
+}
+.btn-cust:hover {
+    border: #253189 3px solid;
+    transform: scale(1.1);
+    background: #ffffff;
+    color: #253189;
+}
+footer {
+    margin: 110px 0px;
+}
+.footer-container {
+    color: white;
+    font-family: Jura;
+}
+.footer-container > h1 {
+    font-family: Syncopate;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.footer-container > span {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.links-social {
+    margin-top: 10px;
+    gap: 15px;
+    display: flex;
+    padding: 0;
+}
+.links-social > li {
+    list-style-type: none;
+}
+.links-social > li > a > img {
+    width: 34px;
+}
+.configurator > h1 {
+    color: #fff;
+    font-family: Jura;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
