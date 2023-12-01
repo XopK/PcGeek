@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/config', function () {
     return view('config');
 });
+
+Route::get('/forum', function () {
+    return view('forum');
+});

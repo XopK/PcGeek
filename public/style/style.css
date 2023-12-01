@@ -350,3 +350,62 @@ footer {
     background: #253189;
     color: #fff;
 }
+.forum-title > h1 {
+    color: #fff;
+    font-family: Jura;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.filter {
+    margin-top: 35px;
+    color: #fff;
+    font-family: Jura;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    justify-content: space-between;
+}
+.btn-filter {
+    margin-left: 15px;
+    color: #000;
+    font-family: Jura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background-color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 7px 25px;
+}
+.forum-block-info {
+    background-color: #fff;
+    border-radius: 30px;
+}
+.block-info {
+    color: #000;
+    font-family: Jura;
+    font-style: normal;
+    line-height: normal;
+    padding: 30px;
+}
+.block-info > h3 {
+    font-size: 16px;
+    font-weight: 500;
+}
+.block-info > h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+.block-info > p {
+    font-size: 16px;
+    font-weight: 600;
+}
+.block-info > span {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    font-weight: 600;
+}

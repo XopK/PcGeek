@@ -5,7 +5,7 @@
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="/" class="nav-link">Главная</a></li>
-        <li><a href="#" class="nav-link">Форум</a></li>
+        <li><a href="/forum" class="nav-link">Форум</a></li>
         <li><a href="/config" class="nav-link">Конструктор</a></li>
     </ul>
 
