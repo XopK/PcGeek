@@ -244,7 +244,7 @@
                     <h3>На нашем сайте вы можете собрать свой компьютер и поделиться своей сборкой с пользователями
                     </h3>
                 </div>
-                <button class="btn btn-cust">Попробовать</button>
+                <a href="/config" type="button" class="btn btn-cust">Попробовать</a>
             </div>
         </div>
     </div>

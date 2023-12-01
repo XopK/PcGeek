@@ -199,7 +199,7 @@ header {
     background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: multiply;
 }
-.your-photo > button {
+.your-photo > a {
     position: relative;
     top: 500px;
 }
@@ -214,8 +214,6 @@ header {
     transition: 0.4s;
 }
 .btn-cust:hover {
-    border: #253189 3px solid;
-    transform: scale(1.1);
     background: #ffffff;
     color: #253189;
 }
@@ -251,11 +249,104 @@ footer {
 .links-social > li > a > img {
     width: 34px;
 }
-.configurator > h1 {
+.config-con > h1 {
     color: #fff;
     font-family: Jura;
     font-size: 36px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+.components {
+    display: flex;
+    align-items: start;
+    margin-bottom: 55px;
+}
+.configurator {
+    margin-top: 95px;
+}
+.components > img {
+    width: 99px;
+}
+.list-spec {
+    width: calc(100% - 300px);
+}
+.components-text {
+    padding-right: 56px;
+    margin-left: 20px;
+    color: #fff;
+    font-family: Jura;
+}
+.components-text > h3 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.components-text > span {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.btn-cust-config {
+    font-family: Jura;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 20px;
+    background: #253189;
+    color: #fff;
+    margin-top: 15px;
+    padding: 10px 30px;
+    transition: 0.4s;
+}
+.btn-cust-config:hover {
+    background: #c2c9f6;
+    color: #000000;
+}
+.cost {
+    text-align: center;
+    width: 356px;
+    height: 319px;
+    background: #fff;
+}
+.cost > h3 {
+    color: #000;
+    font-family: Jura;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-top: 16px;
+}
+.total {
+    margin: 35px 0 46px 0;
+    display: flex;
+    justify-content: space-between;
+    color: #000;
+    font-family: Jura;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 0 35px;
+}
+.hover-cost:hover {
+    background: #c2c9f6;
+    color: #000000;
+}
+.btn-cost {
+    margin-top: 21px;
+    font-family: Jura;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 20px;
+    background: #c2c9f6;
+    color: #000000;
+    padding: 10px 45px;
+    transition: 0.4s;
+}
+.btn-cost:hover {
+    background: #253189;
+    color: #fff;
 }
