@@ -384,6 +384,8 @@ footer {
 .forum-block-info {
     background-color: #fff;
     border-radius: 30px;
+    width: 100%;
+    display: flex;
 }
 .block-info {
     color: #000;
@@ -391,6 +393,7 @@ footer {
     font-style: normal;
     line-height: normal;
     padding: 30px;
+    width: 100%;
 }
 .block-info > h3 {
     font-size: 16px;
@@ -408,4 +411,153 @@ footer {
     color: rgba(0, 0, 0, 0.5);
     font-size: 16px;
     font-weight: 600;
+}
+.links-forum {
+    display: flex;
+    align-items: end;
+    gap: 40px;
+}
+.links-forum > a {
+    text-decoration: none;
+    margin: 0;
+}
+.links-forum > a > p {
+    color: #000;
+    font-family: Jura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+}
+.links-forum > a > p > img {
+    margin-right: 5px;
+}
+.forum-post {
+    display: flex;
+    margin-top: 41px;
+}
+.footer-forum {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer-forum > span {
+    color: rgba(0, 0, 0, 0.6);
+    font-family: Jura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.forum-image {
+    padding: 30px 30px 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.forum-image > img {
+    width: 60%;
+}
+.like {
+    padding: 5px 0;
+    text-align: center;
+    width: 60px;
+    height: 63px;
+    border-radius: 15px;
+    background: #fff;
+    color: rgba(0, 0, 0, 0.65);
+    font-family: Jura;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    transition: all 0.3s ease-out;
+    border: none;
+}
+
+.like:hover {
+    background: #ffffff;
+    transform: scale(1.1);
+}
+.diss-like {
+    margin-top: 15px;
+    text-align: center;
+    transition: all 0.3s ease-out;
+}
+.diss-like:hover {
+    transform: scale(1.1);
+}
+.like > p {
+    margin: 0;
+}
+.branch-title > h1 {
+    color: #fff;
+    font-family: Jura;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.profile-user {
+    display: flex;
+    margin-bottom: 30px;
+}
+.profile-text {
+    margin-left: 10px;
+}
+.profile-text > h3 {
+    margin: 0;
+    color: #000;
+    font-family: Jura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.profile-text > p {
+    margin: 0;
+    color: #000;
+    font-family: Jura;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.profile-text > span {
+    color: rgba(0, 0, 0, 0.5);
+    font-family: Jura;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.text-branch > p {
+    color: #000;
+    font-family: Jura;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.config-branch {
+    margin-top: 50px;
+    color: #fff;
+    font-family: Jura;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.config-component {
+    padding: 30px;
+    color: #000;
+    display: flex;
+    border-radius: 60px;
+    background: #fff;
+}
+.image-config-component > img {
+    width: 40%;
 }

@@ -24,3 +24,7 @@ Route::get('/config', function () {
 Route::get('/forum', function () {
     return view('forum');
 });
+
+Route::get('/branch', function () {
+    return view('branch');
+});

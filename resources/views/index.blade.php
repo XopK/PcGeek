@@ -193,7 +193,7 @@
         <div class="forum">
             <h1>Популярные треды</h1>
             <div class="forum-block">
-                <a href="#">
+                <a href="/forum">
                     <div class="card forum-list">
                         <div class="forum-card">
                             <p>Сборка компьютера,апгрейд</p>
@@ -205,7 +205,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#">
+                <a href="/forum">
                     <div class="card forum-list">
                         <div class="forum-card">
                             <p>Сборка компьютера,апгрейд</p>
@@ -217,7 +217,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#">
+                <a href="/forum">
                     <div class="card forum-list">
                         <div class="forum-card">
                             <p>Сборка компьютера,апгрейд</p>
