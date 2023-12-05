@@ -66,6 +66,19 @@
                 </div>
             </div>
         </div>
+
+        <div class="comment">
+            <h3>Комментарии</h3>
+            <input class="form-control form-control-lg" type="text" placeholder="напишите комментарий" style="width: 93%" aria-label=".form-control-lg example">
+
+            <div class="comment-list">
+                <hr>
+                <div class="comment-user">
+
+                </div>
+                <hr>
+            </div>
+        </div>
     </div>
     <x-footer></x-footer>
 </body>
