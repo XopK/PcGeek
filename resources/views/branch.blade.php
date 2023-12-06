@@ -69,14 +69,156 @@
 
         <div class="comment">
             <h3>Комментарии</h3>
-            <input class="form-control form-control-lg" type="text" placeholder="напишите комментарий" style="width: 93%" aria-label=".form-control-lg example">
+            <input class="form-control form-control-lg" type="text" placeholder="напишите комментарий"
+                style="width: 93%" aria-label=".form-control-lg example">
 
             <div class="comment-list">
                 <hr>
                 <div class="comment-user">
-
+                    <div class="comment-img">
+                        <img src="/images/Group 31.svg" alt="Group 31.svg">
+                        <div class="comment-img-name">
+                            <h2>Asdf1</h2>
+                            <span>2 минуты назад</span>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <p>Смотрите характеристики и спеки, там все написано.</p>
+                    </div>
+                    <div class="footer-message">
+                        <button class="btn btn-like"><img src="/images/Group 32.svg" alt="Group 32.svg"></button>
+                        <span>0</span>
+                        <button class="btn btn-disslike"><img src="/images/Group 33.svg" alt="Group 33.svg"></button>
+                    </div>
                 </div>
                 <hr>
+                <div class="comment-user">
+                    <div class="comment-img">
+                        <img src="/images/Group 31.svg" alt="Group 31.svg">
+                        <div class="comment-img-name">
+                            <h2>Asdf1</h2>
+                            <span>2 минуты назад</span>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <p>Смотрите характеристики и спеки, там все написано.</p>
+                    </div>
+                    <div class="footer-message">
+                        <button class="btn btn-like"><img src="/images/Group 32.svg" alt="Group 32.svg"></button>
+                        <span>0</span>
+                        <button class="btn btn-disslike"><img src="/images/Group 33.svg" alt="Group 33.svg"></button>
+                    </div>
+                </div>
+                <hr>
+                <div class="comment-user">
+                    <div class="comment-img">
+                        <img src="/images/Group 31.svg" alt="Group 31.svg">
+                        <div class="comment-img-name">
+                            <h2>Asdf1</h2>
+                            <span>2 минуты назад</span>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <p>Смотрите характеристики и спеки, там все написано.</p>
+                    </div>
+                    <div class="footer-message">
+                        <button class="btn btn-like"><img src="/images/Group 32.svg" alt="Group 32.svg"></button>
+                        <span>0</span>
+                        <button class="btn btn-disslike"><img src="/images/Group 33.svg" alt="Group 33.svg"></button>
+                    </div>
+                </div>
+                <hr>
+                <div class="comment-user">
+                    <div class="comment-img">
+                        <img src="/images/Group 31.svg" alt="Group 31.svg">
+                        <div class="comment-img-name">
+                            <h2>Asdf1</h2>
+                            <span>2 минуты назад</span>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <p>Смотрите характеристики и спеки, там все написано.</p>
+                    </div>
+                    <div class="footer-message">
+                        <button class="btn btn-like"><img src="/images/Group 32.svg" alt="Group 32.svg"></button>
+                        <span>0</span>
+                        <button class="btn btn-disslike"><img src="/images/Group 33.svg" alt="Group 33.svg"></button>
+                    </div>
+                </div>
+                <hr>
+                <div class="comment-user">
+                    <div class="comment-img">
+                        <img src="/images/Group 31.svg" alt="Group 31.svg">
+                        <div class="comment-img-name">
+                            <h2>Asdf1</h2>
+                            <span>2 минуты назад</span>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <p>Смотрите характеристики и спеки, там все написано.</p>
+                    </div>
+                    <div class="footer-message">
+                        <button class="btn btn-like"><img src="/images/Group 32.svg" alt="Group 32.svg"></button>
+                        <span>0</span>
+                        <button class="btn btn-disslike"><img src="/images/Group 33.svg" alt="Group 33.svg"></button>
+                    </div>
+                </div>
+                <hr>
+                <div class="comment-user">
+                    <div class="comment-img">
+                        <img src="/images/Group 31.svg" alt="Group 31.svg">
+                        <div class="comment-img-name">
+                            <h2>Asdf1</h2>
+                            <span>2 минуты назад</span>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <p>Смотрите характеристики и спеки, там все написано.</p>
+                    </div>
+                    <div class="footer-message">
+                        <button class="btn btn-like"><img src="/images/Group 32.svg" alt="Group 32.svg"></button>
+                        <span>0</span>
+                        <button class="btn btn-disslike"><img src="/images/Group 33.svg" alt="Group 33.svg"></button>
+                    </div>
+                </div>
+                <hr>
+                <div class="comment-user">
+                    <div class="comment-img">
+                        <img src="/images/Group 31.svg" alt="Group 31.svg">
+                        <div class="comment-img-name">
+                            <h2>Asdf1</h2>
+                            <span>2 минуты назад</span>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <p>Смотрите характеристики и спеки, там все написано.</p>
+                    </div>
+                    <div class="footer-message">
+                        <button class="btn btn-like"><img src="/images/Group 32.svg" alt="Group 32.svg"></button>
+                        <span>0</span>
+                        <button class="btn btn-disslike"><img src="/images/Group 33.svg" alt="Group 33.svg"></button>
+                    </div>
+                </div>
+                <hr>
+                <div class="comment-user">
+                    <div class="comment-img">
+                        <img src="/images/Group 31.svg" alt="Group 31.svg">
+                        <div class="comment-img-name">
+                            <h2>Asdf1</h2>
+                            <span>2 минуты назад</span>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <p>Смотрите характеристики и спеки, там все написано.</p>
+                    </div>
+                    <div class="footer-message">
+                        <button class="btn btn-like"><img src="/images/Group 32.svg" alt="Group 32.svg"></button>
+                        <span>0</span>
+                        <button class="btn btn-disslike"><img src="/images/Group 33.svg" alt="Group 33.svg"></button>
+                    </div>
+                </div>
+                <hr>
+
             </div>
         </div>
     </div>

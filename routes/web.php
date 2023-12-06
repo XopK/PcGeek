@@ -28,3 +28,7 @@ Route::get('/forum', function () {
 Route::get('/branch', function () {
     return view('branch');
 });
+
+Route::get('/profile', function () {
+    return view('profile');
+});
