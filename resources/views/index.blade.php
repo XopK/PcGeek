@@ -20,12 +20,12 @@
         <main class="d-flex row">
             <div class="main-text col">
                 <h1>PcGeek</h1>
-                <h3>Собери свой компьютер сам</h3>
+                <h3>Компьютерный форум</h3>
             </div>
             <img class="col" src="/images/125bc2846415e8d1db2e928a68b325f9.png"
                 alt="125bc2846415e8d1db2e928a68b325f9.png">
         </main>
-        <div class="all-config row">
+        {{-- <div class="all-config row">
             <h1>Готовые сборки</h1>
             <div class="configs" style="margin: 40px 0">
                 <div class="d-flex justify-content-center row" style="gap: 40px; flex-wrap: wrap; align-items: center">
@@ -189,7 +189,7 @@
                 </div>
             </div>
 
-        </div>
+        </div> --}}
         <div class="forum">
             <h1>Популярные треды</h1>
             <div class="forum-block">
@@ -238,6 +238,32 @@
             </a>
         </div>
         <div class="your-pc">
+            <h1>Теги</h1>
+            <div class="genres-block" style="margin-top: 30px;">
+                <div class="genres-card-index">
+                    <a href="#">
+                        <span>Апгрейд</span>
+                    </a>
+                </div>
+                <div class="genres-card-index">
+                    <a href="#">
+                        <span>Апгрейд</span>
+                    </a>
+                </div>
+                <div class="genres-card-index">
+                    <a href="#">
+                        <span>Апгрейд</span>
+                    </a>
+                </div>
+                <div class="genres-card-index">
+                    <a href="#">
+                        <span>Апгрейд</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- <div class="your-pc">
             <h1>Собери свой компьютер</h1>
             <div class="your-photo black" style="margin: 40px 0">
                 <div class="text-photo">
@@ -246,7 +272,7 @@
                 </div>
                 <a href="/config" type="button" class="btn btn-cust">Попробовать</a>
             </div>
-        </div>
+        </div> --}}
     </div>
     <x-footer></x-footer>
 </body>

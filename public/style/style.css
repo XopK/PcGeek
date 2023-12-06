@@ -2,11 +2,9 @@
 
 body {
     background: rgb(20, 28, 82);
-    background: linear-gradient(
-        180deg,
-        rgba(20, 28, 82, 1) 0%,
-        rgba(5, 8, 27, 1) 100%
-    );
+    background: linear-gradient(180deg,
+            rgba(20, 28, 82, 1) 0%,
+            rgba(5, 8, 27, 1) 100%);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -39,7 +37,7 @@ header {
     max-width: 500px;
 }
 
-.main-text > h1 {
+.main-text>h1 {
     color: #fff;
     font-family: Syncopate;
     font-size: 64px;
@@ -48,7 +46,7 @@ header {
     line-height: normal;
 }
 
-.main-text > h3 {
+.main-text>h3 {
     color: #fff;
     font-family: Jura;
     font-size: 40px;
@@ -62,7 +60,7 @@ header {
     margin-top: 180px;
 }
 
-.all-config > h1 {
+.all-config>h1 {
     color: #fff;
     font-family: Jura;
     font-size: 32px;
@@ -76,7 +74,7 @@ header {
     background: #fff;
 }
 
-.card > img {
+.card>img {
     padding: 13px 26px 0 26px;
 }
 
@@ -85,14 +83,14 @@ header {
     font-family: Jura;
 }
 
-.card-body > h1 {
+.card-body>h1 {
     font-size: 21px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
 }
 
-.card-body > p {
+.card-body>p {
     color: rgba(0, 0, 0, 0.5);
     font-size: 14px;
     font-style: normal;
@@ -100,7 +98,7 @@ header {
     line-height: normal;
 }
 
-.card-body > h4 {
+.card-body>h4 {
     font-size: 17px;
     font-style: normal;
     font-weight: 700;
@@ -109,10 +107,10 @@ header {
 
 .forum {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 140px;
 }
 
-.forum > h1 {
+.forum>h1 {
     color: #fff;
     font-family: Jura;
     font-size: 32px;
@@ -121,7 +119,7 @@ header {
     line-height: normal;
 }
 
-.forum > a > h2 {
+.forum>a>h2 {
     color: #fff;
     font-family: Jura;
     font-size: 32px;
@@ -140,7 +138,7 @@ header {
     line-height: normal;
 }
 
-.forum-card > p {
+.forum-card>p {
     color: #000;
     font-family: Jura;
     font-size: 16px;
@@ -149,7 +147,7 @@ header {
     line-height: normal;
 }
 
-.forum-card > h3 {
+.forum-card>h3 {
     color: #000;
     font-family: Jura;
     font-size: 26px;
@@ -158,7 +156,7 @@ header {
     line-height: normal;
 }
 
-.forum-card > span {
+.forum-card>span {
     color: rgba(0, 0, 0, 0.5);
     font-family: Jura;
     font-size: 13px;
@@ -175,7 +173,7 @@ header {
     margin-bottom: 30px;
 }
 
-.forum-block > a {
+.forum-block>a {
     text-decoration: none;
 }
 
@@ -184,7 +182,7 @@ header {
     margin-top: 100px;
 }
 
-.your-pc > h1 {
+.your-pc>h1 {
     color: #fff;
     font-family: Jura;
     font-size: 32px;
@@ -220,7 +218,7 @@ header {
     background-blend-mode: multiply;
 }
 
-.your-photo > a {
+.your-photo>a {
     position: relative;
     top: 500px;
 }
@@ -250,7 +248,7 @@ footer {
     font-family: Jura;
 }
 
-.footer-container > h1 {
+.footer-container>h1 {
     font-family: Syncopate;
     font-size: 36px;
     font-style: normal;
@@ -258,7 +256,7 @@ footer {
     line-height: normal;
 }
 
-.footer-container > span {
+.footer-container>span {
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -272,15 +270,15 @@ footer {
     padding: 0;
 }
 
-.links-social > li {
+.links-social>li {
     list-style-type: none;
 }
 
-.links-social > li > a > img {
+.links-social>li>a>img {
     width: 34px;
 }
 
-.config-con > h1 {
+.config-con>h1 {
     color: #fff;
     font-family: Jura;
     font-size: 36px;
@@ -299,7 +297,7 @@ footer {
     margin-top: 95px;
 }
 
-.components > img {
+.components>img {
     width: 99px;
 }
 
@@ -314,14 +312,14 @@ footer {
     font-family: Jura;
 }
 
-.components-text > h3 {
+.components-text>h3 {
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
 }
 
-.components-text > span {
+.components-text>span {
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -352,7 +350,7 @@ footer {
     background: #fff;
 }
 
-.cost > h3 {
+.cost>h3 {
     color: #000;
     font-family: Jura;
     font-size: 24px;
@@ -397,7 +395,7 @@ footer {
     color: #fff;
 }
 
-.forum-title > h1 {
+.forum-title>h1 {
     color: #fff;
     font-family: Jura;
     font-size: 36px;
@@ -447,22 +445,22 @@ footer {
     width: 100%;
 }
 
-.block-info > h3 {
+.block-info>h3 {
     font-size: 16px;
     font-weight: 500;
 }
 
-.block-info > h1 {
+.block-info>h1 {
     font-size: 24px;
     font-weight: 700;
 }
 
-.block-info > p {
+.block-info>p {
     font-size: 16px;
     font-weight: 600;
 }
 
-.block-info > span {
+.block-info>span {
     color: rgba(0, 0, 0, 0.5);
     font-size: 16px;
     font-weight: 600;
@@ -474,12 +472,12 @@ footer {
     gap: 40px;
 }
 
-.links-forum > a {
+.links-forum>a {
     text-decoration: none;
     margin: 0;
 }
 
-.links-forum > a > p {
+.links-forum>a>p {
     color: #000;
     font-family: Jura;
     font-size: 16px;
@@ -489,7 +487,7 @@ footer {
     margin: 0;
 }
 
-.links-forum > a > p > img {
+.links-forum>a>p>img {
     margin-right: 5px;
 }
 
@@ -506,7 +504,7 @@ footer {
     justify-content: space-between;
 }
 
-.footer-forum > span {
+.footer-forum>span {
     color: rgba(0, 0, 0, 0.6);
     font-family: Jura;
     font-size: 16px;
@@ -522,7 +520,7 @@ footer {
     align-items: center;
 }
 
-.forum-image > img {
+.forum-image>img {
     width: 60%;
 }
 
@@ -558,11 +556,11 @@ footer {
     transform: scale(1.1);
 }
 
-.like > p {
+.like>p {
     margin: 0;
 }
 
-.branch-title > h1 {
+.branch-title>h1 {
     color: #fff;
     font-family: Jura;
     font-size: 36px;
@@ -580,7 +578,7 @@ footer {
     margin-left: 10px;
 }
 
-.profile-text > h3 {
+.profile-text>h3 {
     margin: 0;
     color: #000;
     font-family: Jura;
@@ -590,7 +588,7 @@ footer {
     line-height: normal;
 }
 
-.profile-text > p {
+.profile-text>p {
     margin: 0;
     color: #000;
     font-family: Jura;
@@ -600,7 +598,7 @@ footer {
     line-height: normal;
 }
 
-.profile-text > span {
+.profile-text>span {
     color: rgba(0, 0, 0, 0.5);
     font-family: Jura;
     font-size: 14px;
@@ -609,7 +607,7 @@ footer {
     line-height: normal;
 }
 
-.text-branch > p {
+.text-branch>p {
     color: #000;
     font-family: Jura;
     font-size: 24px;
@@ -643,7 +641,7 @@ footer {
     width: 20%;
 }
 
-.image-config-component > img {
+.image-config-component>img {
     width: 100%;
 }
 
@@ -655,7 +653,7 @@ footer {
     justify-content: space-around;
 }
 
-.text-branch-component > h3 {
+.text-branch-component>h3 {
     color: #000;
     font-family: Jura;
     font-size: 24px;
@@ -664,7 +662,7 @@ footer {
     line-height: normal;
 }
 
-.text-branch-component > span {
+.text-branch-component>span {
     color: #000;
     font-family: Jura;
     font-size: 16px;
@@ -673,7 +671,7 @@ footer {
     line-height: normal;
 }
 
-.text-branch-component > p {
+.text-branch-component>p {
     margin: 0;
     color: #000;
     font-family: Jura;
@@ -682,6 +680,7 @@ footer {
     font-weight: 700;
     line-height: normal;
 }
+
 .comment {
     margin-top: 115px;
     color: #000000;
@@ -691,7 +690,8 @@ footer {
     font-weight: 700;
     line-height: normal;
 }
-.comment > h3 {
+
+.comment>h3 {
     color: #fff;
     font-family: Jura;
     font-size: 24px;
@@ -699,42 +699,51 @@ footer {
     font-weight: 700;
     line-height: normal;
 }
+
 .comment-user {
     padding: 10px 0;
     width: 93%;
 }
-.comment-list > hr {
+
+.comment-list>hr {
     width: 93%;
-    border: none; /* Убираем границу для браузера Firefox */
-    color: rgb(255, 255, 255); /* Цвет линии для остальных браузеров */
-    background-color: rgb(
-        255,
-        255,
-        255
-    ); /* Цвет линии для браузера Firefox и Opera */
-    height: 2px; /* Толщина линии */
+    border: none;
+    /* Убираем границу для браузера Firefox */
+    color: rgb(255, 255, 255);
+    /* Цвет линии для остальных браузеров */
+    background-color: rgb(255,
+            255,
+            255);
+    /* Цвет линии для браузера Firefox и Opera */
+    height: 2px;
+    /* Толщина линии */
 }
+
 .comment-img {
     display: flex;
     align-items: center;
 }
+
 .comment-img-name {
     margin-left: 10px;
     color: #fff;
     font-family: Jura;
     font-style: normal;
 }
-.comment-img-name > h2 {
+
+.comment-img-name>h2 {
     font-size: 16px;
     font-weight: 700;
     margin: 0;
     line-height: normal;
 }
-.comment-img-name > span {
+
+.comment-img-name>span {
     font-size: 14px;
     font-weight: 600;
     line-height: normal;
 }
+
 .message {
     padding: 25px 0;
     color: #fff;
@@ -744,9 +753,11 @@ footer {
     font-weight: 600;
     line-height: normal;
 }
-.message > p {
+
+.message>p {
     margin: 0;
 }
+
 .footer-message {
     display: flex;
     align-items: center;
@@ -757,11 +768,131 @@ footer {
     font-weight: 600;
     line-height: normal;
 }
+
 .btn-like {
     padding: 0 10px;
     border: none;
 }
+
 .btn-disslike {
     padding: 0 10px;
     border: none;
 }
+
+.profile-block {
+    margin-top: 60px;
+    text-align: center;
+    color: #FFF;
+    font-family: Jura;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.profile-block>span {
+    color: #FFF;
+    font-family: Jura;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.user-posts {
+    margin: 60px auto;
+    width: 93%;
+}
+
+.user-posts a {
+    text-decoration: none;
+}
+
+.user-block-post {
+    margin-bottom: 30px;
+    border-radius: 35px;
+    padding: 30px;
+    text-align: left;
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+
+}
+
+.text-user-post {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 90%;
+}
+
+.text-user-post>span {
+    color: #000;
+    font-family: Jura;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+}
+
+.text-user-post>h3 {
+    color: #000;
+    font-family: Jura;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.text-user-post>p {
+    color: #000;
+    font-family: Jura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+
+.buttons-profile {
+    display: flex;
+    align-items: center;
+}
+
+.favorite-post {
+    margin: 60px auto;
+    width: 93%;
+}
+
+.favorite-post a {
+    text-decoration: none;
+}
+
+.genres-block {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.genres-card-index a {
+    text-decoration: none;
+}
+
+.genres-card-index {
+    border-radius: 30px;
+    width: 20%;
+    padding: 50px;
+    background-color: #FFF;
+}
+
+.genres-card-index>a>span {
+    color: #000;
+    font-family: Jura;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+

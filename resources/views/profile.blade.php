@@ -15,8 +15,109 @@
 </head>
 
 <body>
-    <div class="container branch-title">
+    <div class="container">
         <x-header></x-header>
+        <div class="profile-block">
+            <img src="/images/profile.svg" alt="profile.svg">
+            <h2 style="margin-top: 10px">Jadweii</h2>
+            <span>на сайте с 08.11.2023</span>
+
+            <div class="user-posts">
+                <h1 style="margin-bottom: 20px">Посты</h1>
+
+                <div class="user-block-post">
+                    <a href="/branch">
+                        <div class="text-user-post">
+                            <span>Сборка компьютера, апгрейд</span>
+                            <h3>Сборка от чайника</h3>
+                            <p>Добрый день, данная сборка совместима? Можете подсказать, что можно заменить чтобы
+                                оптимизировать (по цене либо по производительности) вдруг что то лишнее, или наоборот не
+                                хватает.</p>
+                        </div>
+                        <div class="buttons-profile"><a type="button" href="#"><img src="/images/Group 39.svg"
+                                    alt="Group 39.svg"></a>
+                        </div>
+                    </a>
+                </div>
+                <div class="user-block-post">
+                    <a href="/branch">
+                        <div class="text-user-post">
+                            <span>Сборка компьютера, апгрейд</span>
+                            <h3>Сборка от чайника</h3>
+                            <p>Добрый день, данная сборка совместима? Можете подсказать, что можно заменить чтобы
+                                оптимизировать (по цене либо по производительности) вдруг что то лишнее, или наоборот не
+                                хватает.</p>
+                        </div>
+                        <div class="buttons-profile"><a type="button" href="#"><img src="/images/Group 39.svg"
+                                    alt="Group 39.svg"></a>
+                        </div>
+                    </a>
+                </div>
+                <div class="user-block-post">
+                    <a href="/branch">
+                        <div class="text-user-post">
+                            <span>Сборка компьютера, апгрейд</span>
+                            <h3>Сборка от чайника</h3>
+                            <p>Добрый день, данная сборка совместима? Можете подсказать, что можно заменить чтобы
+                                оптимизировать (по цене либо по производительности) вдруг что то лишнее, или наоборот не
+                                хватает.</p>
+                        </div>
+                        <div class="buttons-profile"><a type="button" href="#"><img src="/images/Group 39.svg"
+                                    alt="Group 39.svg"></a>
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+
+            <div class="favorite-post">
+                <h1 style="margin-bottom: 20px">Избранное</h1>
+
+                <div class="user-block-post">
+                    <a href="/branch">
+                        <div class="text-user-post">
+                            <span>Сборка компьютера, апгрейд</span>
+                            <h3>Сборка от чайника</h3>
+                            <p>Добрый день, данная сборка совместима? Можете подсказать, что можно заменить чтобы
+                                оптимизировать (по цене либо по производительности) вдруг что то лишнее, или наоборот не
+                                хватает.</p>
+                        </div>
+                        <div class="buttons-profile"><a type="button" href="#"><img src="/images/mark.svg"
+                                    alt="mark.svg"></a>
+                        </div>
+                    </a>
+                </div>
+                <div class="user-block-post">
+                    <a href="/branch">
+                        <div class="text-user-post">
+                            <span>Сборка компьютера, апгрейд</span>
+                            <h3>Сборка от чайника</h3>
+                            <p>Добрый день, данная сборка совместима? Можете подсказать, что можно заменить чтобы
+                                оптимизировать (по цене либо по производительности) вдруг что то лишнее, или наоборот не
+                                хватает.</p>
+                        </div>
+                        <div class="buttons-profile"><a type="button" href="#"><img src="/images/mark.svg"
+                                    alt="mark.svg"></a>
+                        </div>
+                    </a>
+                </div>
+                <div class="user-block-post">
+                    <a href="/branch">
+                        <div class="text-user-post">
+                            <span>Сборка компьютера, апгрейд</span>
+                            <h3>Сборка от чайника</h3>
+                            <p>Добрый день, данная сборка совместима? Можете подсказать, что можно заменить чтобы
+                                оптимизировать (по цене либо по производительности) вдруг что то лишнее, или наоборот не
+                                хватает.</p>
+                        </div>
+                        <div class="buttons-profile"><a type="button" href="#"><img src="/images/mark.svg"
+                                    alt="mark.svg"></a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
     <x-footer></x-footer>
 </body>
