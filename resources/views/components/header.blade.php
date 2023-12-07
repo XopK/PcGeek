@@ -15,9 +15,10 @@
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
+            </form>
         </li>
-        <li><a href="#" class="nav-link">Регистрация</a></li>
-        <li><a href="#" class="nav-link">Вход</a></li>
+        <li><a href="#" data-bs-toggle="modal" data-bs-target="#signup" class="nav-link">Регистрация</a>
+        </li>
+        <li><a href="#" data-bs-toggle="modal" data-bs-target="#signin" class="nav-link">Войти</a></li>
     </ul>
 </header>
