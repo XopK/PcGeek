@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -35,7 +36,7 @@ class AuthController extends Controller
         $user = User::create([
             "login" => $user_data['login'],
             "email" => $user_data['email'],
-            "password" => $user_data['password'],
+            'password' => Hash::make($user_data['password']),
             "id_role" => 2,
         ]);
         Auth::login($user);
@@ -64,10 +65,13 @@ class AuthController extends Controller
 
         $user_login = $request->only("login_log", "password_log");
 
-        if (Auth::attempt([
-            "login" => $user_login['login_log'],
-            "password" => $user_login['password_log']
-        ])) {
+        if (
+            Auth::attempt([
+                'login' => $user_login['login_log'],
+                'password' => $user_login['password_log']
+                
+            ])
+        ) {
             return redirect("/")->with("succes", "");
         } else {
             return redirect()->back()->with("error", "Неверный логин или пароль!!!");
