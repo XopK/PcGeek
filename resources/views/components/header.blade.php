@@ -6,6 +6,9 @@
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="/" class="nav-link">Главная</a></li>
         <li><a href="/forum" class="nav-link">Форум</a></li>
+        @auth
+            <li><a href="/profile" class="nav-link">Личный кабинет</a></li>
+        @endauth
         {{-- <li><a href="/config" class="nav-link">Конструктор</a></li> --}}
 
     </ul>
@@ -17,8 +20,13 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </li>
-        <li><a href="#" data-bs-toggle="modal" data-bs-target="#signup" class="nav-link">Регистрация</a>
-        </li>
-        <li><a href="#" data-bs-toggle="modal" data-bs-target="#signin" class="nav-link">Войти</a></li>
+        @guest
+            <li><a href="#" data-bs-toggle="modal" data-bs-target="#signup" class="nav-link">Регистрация</a>
+            </li>
+            <li><a href="#" data-bs-toggle="modal" data-bs-target="#signin" class="nav-link">Войти</a></li>
+        @endguest
+        @auth
+            <li><a href="/logout" class="nav-link">Выход</a></li>
+        @endauth
     </ul>
 </header>
