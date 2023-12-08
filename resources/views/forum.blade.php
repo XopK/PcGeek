@@ -32,7 +32,7 @@
                             <li><a class="dropdown-item" href="#">Кол-ву лайков</a></li>
                         </ul>
                     </div>
-                    <button class="btn btn-cust">+ Добавить пост</button>
+                    <a href="/addPost" class="btn btn-cust">+ Добавить пост</a>
                 </div>
                 <div class="forum-post">
                     <div class="forum-block-info">

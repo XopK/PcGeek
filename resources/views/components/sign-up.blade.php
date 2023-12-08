@@ -43,7 +43,7 @@
                             </div>
                         @enderror
                     </div>
-                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-cost" type="submit">Войти</button>
+                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-cost" type="submit">Регистрация</button>
                 </form>
             </div>
         </div>

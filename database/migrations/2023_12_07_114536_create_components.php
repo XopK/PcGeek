@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title_component');
             $table->string('config_component');
+            $table->string('image_components');
             $table->string('sale');
             $table->timestamps();
         });

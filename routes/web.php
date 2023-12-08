@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,10 @@ Route::get('/branch', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+
+Route::get('/addPost', [PostController::class, 'show']);
+
+Route::post('/addPost/create', [PostController::class, 'addPost']);
 
 Route::post('/signUp', [AuthController::class, 'signUp']);
 

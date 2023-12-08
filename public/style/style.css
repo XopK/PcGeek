@@ -939,3 +939,14 @@ footer {
     line-height: normal;
     text-decoration: none;
 }
+.addPosts {
+    width: 70%;
+    margin: 0 auto;
+    color: #fff;
+    font-family: Jura;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+}
