@@ -34,312 +34,48 @@
                     </div>
                     <a href="/addPost" class="btn btn-cust">+ Добавить пост</a>
                 </div>
-                <div class="forum-post">
-                    <div class="forum-block-info">
-                        <div class="block-info">
-                            <h3>Материнские платы, апгрейд</h3>
-                            <h1>Второй слот под m2 с радиатором</h1>
-                            <p>Второй слот под м2 который с радиатором, работает так же как первый без радиатора?
-                                Собираю пк, много мат. плат пересматриваю, пишут то нижний слот м2 где то может медленно
-                                работать или еще какие то проблемы. Так как на самом деле?</p>
-                            <span>Автор: Danya239</span>
-                            <div class="footer-forum">
-                                <div class="links-forum">
-                                    <a href="/branch">
-                                        <p><img src="/images/Group 21.svg" alt="Group.svg">Ответить</p>
-                                    </a>
-                                    <a href="#">
-                                        <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
-                                    </a>
+                @foreach ($posts as $post)
+                    @php
+                        $date = $post->created_at;
+                        $newdate = date('d.m.Y', strtotime($date));
+                    @endphp
+                    <div class="forum-post">
+                        <div class="forum-block-info">
+                            <div class="block-info">
+                                @foreach ($post->tags as $tag)
+                                    <span class="badge rounded-pill"
+                                        style="background-color: black; color:#fff;">{{ $tag->title_tag }}</span>
+                                @endforeach
+                                <h1>{{ $post->title_post }}</h1>
+                                <p class="short-text">{{ $post->description }}</p>
+                                <span>Автор: {{ $post->user->login }}</span>
+                                <div class="footer-forum">
+                                    <div class="links-forum">
+                                        <a href="/branch">
+                                            <p><img src="/images/Group 21.svg" alt="Group.svg">Ответить</p>
+                                        </a>
+                                        <a href="#">
+                                            <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
+                                        </a>
+                                    </div>
+                                    <span>{{ $newdate }}</span>
                                 </div>
-                                <span>08.11.2023</span>
+                            </div>
+                            <div class="forum-image"><img src="/images/0c9a0d7c620bf3a4f81c3ac177c9f1ee.png"
+                                    alt="0c9a0d7c620bf3a4f81c3ac177c9f1ee.png">
                             </div>
                         </div>
-                        <div class="forum-image"><img src="/images/0c9a0d7c620bf3a4f81c3ac177c9f1ee.png"
-                                alt="0c9a0d7c620bf3a4f81c3ac177c9f1ee.png">
+                        <div class="buttons-forum" style="margin-left:10px; text-align:center">
+                            <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
+                                <p>{{ $post->likes }}</p>
+                            </button>
+                            <br>
+                            <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
                         </div>
-                    </div>
-                    <div class="buttons-forum" style="margin-left:10px; text-align:center">
-                        <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
-                            <p>22</p>
-                        </button>
-                        <br>
-                        <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
-                    </div>
 
-                </div>
-                <div class="forum-post">
-                    <div class="forum-block-info">
-                        <div class="block-info">
-                            <h3>Материнские платы, апгрейд</h3>
-                            <h1>Второй слот под m2 с радиатором</h1>
-                            <p>Второй слот под м2 который с радиатором, работает так же как первый без радиатора?
-                                Собираю пк, много мат. плат пересматриваю, пишут то нижний слот м2 где то может медленно
-                                работать или еще какие то проблемы. Так как на самом деле?</p>
-                            <span>Автор: Danya239</span>
-                            <div class="footer-forum">
-                                <div class="links-forum">
-                                    <a href="/branch">
-                                        <p><img src="/images/Group 21.svg" alt="Group.svg">Ответить</p>
-                                    </a>
-                                    <a href="#">
-                                        <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
-                                    </a>
-                                </div>
-                                <span>08.11.2023</span>
-                            </div>
-                        </div>
-                        <div class="forum-image"><img src="/images/0c9a0d7c620bf3a4f81c3ac177c9f1ee.png"
-                                alt="0c9a0d7c620bf3a4f81c3ac177c9f1ee.png">
-                        </div>
                     </div>
-                    <div class="buttons-forum" style="margin-left:10px; text-align:center">
-                        <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
-                            <p>22</p>
-                        </button>
-                        <br>
-                        <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
-                    </div>
+                @endforeach
 
-                </div>
-                <div class="forum-post">
-                    <div class="forum-block-info">
-                        <div class="block-info">
-                            <h3>Материнские платы, апгрейд</h3>
-                            <h1>Второй слот под m2 с радиатором</h1>
-                            <p>Второй слот под м2 который с радиатором, работает так же как первый без радиатора?
-                                Собираю пк, много мат. плат пересматриваю, пишут то нижний слот м2 где то может медленно
-                                работать или еще какие то проблемы. Так как на самом деле?</p>
-                            <span>Автор: Danya239</span>
-                            <div class="footer-forum">
-                                <div class="links-forum">
-                                    <a href="/branch">
-                                        <p><img src="/images/Group 21.svg" alt="Group.svg">Ответить</p>
-                                    </a>
-                                    <a href="#">
-                                        <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
-                                    </a>
-                                </div>
-                                <span>08.11.2023</span>
-                            </div>
-                        </div>
-                        <div class="forum-image"><img src="/images/0c9a0d7c620bf3a4f81c3ac177c9f1ee.png"
-                                alt="0c9a0d7c620bf3a4f81c3ac177c9f1ee.png">
-                        </div>
-                    </div>
-                    <div class="buttons-forum" style="margin-left:10px; text-align:center">
-                        <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
-                            <p>22</p>
-                        </button>
-                        <br>
-                        <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
-                    </div>
-
-                </div>
-                <div class="forum-post">
-                    <div class="forum-block-info">
-                        <div class="block-info">
-                            <h3>Материнские платы, апгрейд</h3>
-                            <h1>Второй слот под m2 с радиатором</h1>
-                            <p>Второй слот под м2 который с радиатором, работает так же как первый без радиатора?
-                                Собираю пк, много мат. плат пересматриваю, пишут то нижний слот м2 где то может медленно
-                                работать или еще какие то проблемы. Так как на самом деле?</p>
-                            <span>Автор: Danya239</span>
-                            <div class="footer-forum">
-                                <div class="links-forum">
-                                    <a href="/branch">
-                                        <p><img src="/images/Group 21.svg" alt="Group.svg">Ответить</p>
-                                    </a>
-                                    <a href="#">
-                                        <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
-                                    </a>
-                                </div>
-                                <span>08.11.2023</span>
-                            </div>
-                        </div>
-                        <div class="forum-image"><img src="/images/0c9a0d7c620bf3a4f81c3ac177c9f1ee.png"
-                                alt="0c9a0d7c620bf3a4f81c3ac177c9f1ee.png">
-                        </div>
-                    </div>
-                    <div class="buttons-forum" style="margin-left:10px; text-align:center">
-                        <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
-                            <p>22</p>
-                        </button>
-                        <br>
-                        <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
-                    </div>
-
-                </div>
-                <div class="forum-post">
-                    <div class="forum-block-info">
-                        <div class="block-info">
-                            <h3>Материнские платы, апгрейд</h3>
-                            <h1>Второй слот под m2 с радиатором</h1>
-                            <p>Второй слот под м2 который с радиатором, работает так же как первый без радиатора?
-                                Собираю пк, много мат. плат пересматриваю, пишут то нижний слот м2 где то может медленно
-                                работать или еще какие то проблемы. Так как на самом деле?</p>
-                            <span>Автор: Danya239</span>
-                            <div class="footer-forum">
-                                <div class="links-forum">
-                                    <a href="/branch">
-                                        <p><img src="/images/Group 21.svg" alt="Group.svg">Ответить</p>
-                                    </a>
-                                    <a href="#">
-                                        <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
-                                    </a>
-                                </div>
-                                <span>08.11.2023</span>
-                            </div>
-                        </div>
-                        <div class="forum-image"><img src="/images/0c9a0d7c620bf3a4f81c3ac177c9f1ee.png"
-                                alt="0c9a0d7c620bf3a4f81c3ac177c9f1ee.png">
-                        </div>
-                    </div>
-                    <div class="buttons-forum" style="margin-left:10px; text-align:center">
-                        <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
-                            <p>22</p>
-                        </button>
-                        <br>
-                        <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
-                    </div>
-
-                </div>
-                <div class="forum-post">
-                    <div class="forum-block-info">
-                        <div class="block-info">
-                            <h3>Материнские платы, апгрейд</h3>
-                            <h1>Второй слот под m2 с радиатором</h1>
-                            <p>Второй слот под м2 который с радиатором, работает так же как первый без радиатора?
-                                Собираю пк, много мат. плат пересматриваю, пишут то нижний слот м2 где то может медленно
-                                работать или еще какие то проблемы. Так как на самом деле?</p>
-                            <span>Автор: Danya239</span>
-                            <div class="footer-forum">
-                                <div class="links-forum">
-                                    <a href="/branch">
-                                        <p><img src="/images/Group 21.svg" alt="Group.svg">Ответить</p>
-                                    </a>
-                                    <a href="#">
-                                        <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
-                                    </a>
-                                </div>
-                                <span>08.11.2023</span>
-                            </div>
-                        </div>
-                        <div class="forum-image"><img src="/images/0c9a0d7c620bf3a4f81c3ac177c9f1ee.png"
-                                alt="0c9a0d7c620bf3a4f81c3ac177c9f1ee.png">
-                        </div>
-                    </div>
-                    <div class="buttons-forum" style="margin-left:10px; text-align:center">
-                        <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
-                            <p>22</p>
-                        </button>
-                        <br>
-                        <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
-                    </div>
-
-                </div>
-                <div class="forum-post">
-                    <div class="forum-block-info">
-                        <div class="block-info">
-                            <h3>Материнские платы, апгрейд</h3>
-                            <h1>Второй слот под m2 с радиатором</h1>
-                            <p>Второй слот под м2 который с радиатором, работает так же как первый без радиатора?
-                                Собираю пк, много мат. плат пересматриваю, пишут то нижний слот м2 где то может медленно
-                                работать или еще какие то проблемы. Так как на самом деле?</p>
-                            <span>Автор: Danya239</span>
-                            <div class="footer-forum">
-                                <div class="links-forum">
-                                    <a href="/branch">
-                                        <p><img src="/images/Group 21.svg" alt="Group.svg">Ответить</p>
-                                    </a>
-                                    <a href="#">
-                                        <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
-                                    </a>
-                                </div>
-                                <span>08.11.2023</span>
-                            </div>
-                        </div>
-                        <div class="forum-image"><img src="/images/0c9a0d7c620bf3a4f81c3ac177c9f1ee.png"
-                                alt="0c9a0d7c620bf3a4f81c3ac177c9f1ee.png">
-                        </div>
-                    </div>
-                    <div class="buttons-forum" style="margin-left:10px; text-align:center">
-                        <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
-                            <p>22</p>
-                        </button>
-                        <br>
-                        <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
-                    </div>
-
-                </div>
-                <div class="forum-post">
-                    <div class="forum-block-info">
-                        <div class="block-info">
-                            <h3>Материнские платы, апгрейд</h3>
-                            <h1>Второй слот под m2 с радиатором</h1>
-                            <p>Второй слот под м2 который с радиатором, работает так же как первый без радиатора?
-                                Собираю пк, много мат. плат пересматриваю, пишут то нижний слот м2 где то может медленно
-                                работать или еще какие то проблемы. Так как на самом деле?</p>
-                            <span>Автор: Danya239</span>
-                            <div class="footer-forum">
-                                <div class="links-forum">
-                                    <a href="/branch">
-                                        <p><img src="/images/Group 21.svg" alt="Group.svg">Ответить</p>
-                                    </a>
-                                    <a href="#">
-                                        <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
-                                    </a>
-                                </div>
-                                <span>08.11.2023</span>
-                            </div>
-                        </div>
-                        <div class="forum-image"><img src="/images/0c9a0d7c620bf3a4f81c3ac177c9f1ee.png"
-                                alt="0c9a0d7c620bf3a4f81c3ac177c9f1ee.png">
-                        </div>
-                    </div>
-                    <div class="buttons-forum" style="margin-left:10px; text-align:center">
-                        <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
-                            <p>22</p>
-                        </button>
-                        <br>
-                        <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
-                    </div>
-
-                </div>
-                <div class="forum-post">
-                    <div class="forum-block-info">
-                        <div class="block-info">
-                            <h3>Материнские платы, апгрейд</h3>
-                            <h1>Второй слот под m2 с радиатором</h1>
-                            <p>Второй слот под м2 который с радиатором, работает так же как первый без радиатора?
-                                Собираю пк, много мат. плат пересматриваю, пишут то нижний слот м2 где то может медленно
-                                работать или еще какие то проблемы. Так как на самом деле?</p>
-                            <span>Автор: Danya239</span>
-                            <div class="footer-forum">
-                                <div class="links-forum">
-                                    <a href="/branch">
-                                        <p><img src="/images/Group 21.svg" alt="Group.svg">Ответить</p>
-                                    </a>
-                                    <a href="#">
-                                        <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
-                                    </a>
-                                </div>
-                                <span>08.11.2023</span>
-                            </div>
-                        </div>
-                        <div class="forum-image"><img src="/images/0c9a0d7c620bf3a4f81c3ac177c9f1ee.png"
-                                alt="0c9a0d7c620bf3a4f81c3ac177c9f1ee.png">
-                        </div>
-                    </div>
-                    <div class="buttons-forum" style="margin-left:10px; text-align:center">
-                        <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
-                            <p>22</p>
-                        </button>
-                        <br>
-                        <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
-                    </div>
-
-                </div>
             </div>
 
         </div>

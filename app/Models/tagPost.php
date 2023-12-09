@@ -13,4 +13,14 @@ class tagPost extends Model
         'id_tag',
         'id_post',
     ];
+
+    public function tag()
+    {
+        return $this->belongsTo(Tag::class, 'id_tag');
+    }
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class, 'id_post');
+    }
 }

@@ -24,15 +24,29 @@
                 <div class="form-floating mb-3">
                     <input type="text" name="title_post" class="form-control rounded-3" id="floatingInput">
                     <label for="floatingInput">Название поста</label>
+                    @error('title_post')
+                        <div class="alert alert-danger " role="alert">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <div class="form-floating mb-3">
                     <textarea name="description" class="form-control rounded-3" id="floatingInput" rows="5"></textarea>
                     <label for="floatingInput">Текст поста</label>
-
+                    @error('description')
+                        <div class="alert alert-danger " role="alert">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" name="tags" class="form-control rounded-3" id="floatingPassword">
                     <label for="floatingPassword">Теги (вводите через запятую и без пробелов)</label>
+                    @error('tags')
+                        <div class="alert alert-danger " role="alert">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <div class="form-floating mb-3">
                     <select class="form-select" name="component" aria-label="Default select example">
@@ -45,6 +59,11 @@
 
                     </select>
                     <label for="floatingPassword">Выберите компонент</label>
+                    @error('component')
+                        <div class="alert alert-danger " role="alert">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <button class="w-100 mb-2 btn btn-lg rounded-3 btn-cost" type="submit">Опубликовать</button>
             </form>

@@ -17,58 +17,40 @@
 <body>
     <div class="container">
         <x-header></x-header>
+        @php
+            $date = Auth::user()->created_at;
+            $newdate = date('d.m.Y', strtotime($date));
+        @endphp
         <div class="profile-block">
             <img src="/images/profile.svg" alt="profile.svg">
-            <h2 style="margin-top: 10px">Jadweii</h2>
-            <span>на сайте с 08.11.2023</span>
+            <h2 style="margin-top: 10px">{{ Auth::user()->login }}</h2>
+            <span>на сайте с {{ $newdate }}</span>
 
             <div class="user-posts">
                 <h1 style="margin-bottom: 20px">Посты</h1>
-
-                <div class="user-block-post">
-                    <a href="/branch">
-                        <div class="text-user-post">
-                            <span>Сборка компьютера, апгрейд</span>
-                            <h3>Сборка от чайника</h3>
-                            <p>Добрый день, данная сборка совместима? Можете подсказать, что можно заменить чтобы
-                                оптимизировать (по цене либо по производительности) вдруг что то лишнее, или наоборот не
-                                хватает.</p>
-                        </div>
-                        <div class="buttons-profile"><a type="button" href="#"><img src="/images/Group 39.svg"
-                                    alt="Group 39.svg"></a>
-                        </div>
-                    </a>
-                </div>
-                <div class="user-block-post">
-                    <a href="/branch">
-                        <div class="text-user-post">
-                            <span>Сборка компьютера, апгрейд</span>
-                            <h3>Сборка от чайника</h3>
-                            <p>Добрый день, данная сборка совместима? Можете подсказать, что можно заменить чтобы
-                                оптимизировать (по цене либо по производительности) вдруг что то лишнее, или наоборот не
-                                хватает.</p>
-                        </div>
-                        <div class="buttons-profile"><a type="button" href="#"><img src="/images/Group 39.svg"
-                                    alt="Group 39.svg"></a>
-                        </div>
-                    </a>
-                </div>
-                <div class="user-block-post">
-                    <a href="/branch">
-                        <div class="text-user-post">
-                            <span>Сборка компьютера, апгрейд</span>
-                            <h3>Сборка от чайника</h3>
-                            <p>Добрый день, данная сборка совместима? Можете подсказать, что можно заменить чтобы
-                                оптимизировать (по цене либо по производительности) вдруг что то лишнее, или наоборот не
-                                хватает.</p>
-                        </div>
-                        <div class="buttons-profile"><a type="button" href="#"><img src="/images/Group 39.svg"
-                                    alt="Group 39.svg"></a>
-                        </div>
-                    </a>
-                </div>
-
-
+                @forelse ($user_posts as $post)
+                    <div class="user-block-post">
+                        <a href="/branch">
+                            <div class="text-user-post">
+                                <span>
+                                    @foreach ($post->tags as $tag)
+                                        <span class="badge rounded-pill"
+                                            style="background-color: black; color:#fff;">{{ $tag->title_tag }}</span>
+                                    @endforeach
+                                </span>
+                                <h3>{{ $post->title_post }}</h3>
+                                <p class="short-text">{{ $post->description }}</p>
+                            </div>
+                            <div class="buttons-profile"><a type="button" href="#"><img
+                                        src="/images/Group 39.svg" alt="Group 39.svg"></a>
+                            </div>
+                        </a>
+                    </div>
+                @empty
+                    <div class="empty">
+                        <h1>Пусто...</h1>
+                    </div>
+                @endforelse
             </div>
 
             <div class="favorite-post">

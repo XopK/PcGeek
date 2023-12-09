@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,17 +24,13 @@ Route::get('/config', function () {
     return view('config');
 });
 
-Route::get('/forum', function () {
-    return view('forum');
-});
+Route::get('/forum', [PostController::class, 'showForum']);
 
 Route::get('/branch', function () {
     return view('branch');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
+Route::get('/profile', [UserController::class, 'showUser']);
 
 Route::get('/addPost', [PostController::class, 'show']);
 

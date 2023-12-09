@@ -22,4 +22,14 @@ class Post extends Model
     {
         return $this->belongsTo(User::class, 'id_user');
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'tag_posts', 'id_post', 'id_tag');
+    }
+
+    public function components()
+    {
+        return $this->belongsToMany(Component::class, 'component_posts', 'id_post', 'id_component');
+    }
 }

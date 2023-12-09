@@ -14,6 +14,10 @@ class Component extends Model
         'config_component',
         'image_components',
         'sale'
-
     ];
+
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class, 'component_posts', 'id_component', 'id_post');
+    }
 }

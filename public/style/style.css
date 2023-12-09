@@ -453,6 +453,7 @@ footer {
 }
 
 .block-info > h1 {
+    margin-top: 10px;
     font-size: 24px;
     font-weight: 700;
 }
@@ -828,7 +829,7 @@ footer {
 .text-user-post > span {
     color: #000;
     font-family: Jura;
-    font-size: 15px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -836,6 +837,7 @@ footer {
 }
 
 .text-user-post > h3 {
+    margin-top: 5px;
     color: #000;
     font-family: Jura;
     font-size: 24px;
@@ -949,4 +951,24 @@ footer {
     font-weight: 700;
     line-height: normal;
     text-decoration: none;
+}
+.empty {
+    width: 50%;
+    margin: 50px auto;
+    border-radius: 30px;
+    background-color: #fff;
+    padding: 40px;
+    color: #000;
+    font-family: Jura;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.short-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
