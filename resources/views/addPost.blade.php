@@ -49,16 +49,32 @@
                     @enderror
                 </div>
                 <div class="form-floating mb-3">
-                    <select class="form-select" name="component" aria-label="Default select example">
-                        @forelse ($components as $component)
-                            <option value="{{ $component->id }}">
-                                {{ $component->title_component }} {{ $component->sale }}₽</option>
-                        @empty
-                            <option disabled selected value="0"></option>
-                        @endforelse
+                    <div class="accordion" id="accordionExample" style="text-align: left">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Выберите компонент
+                                </button>
+                            </h2>
+                            @forelse ($components as $component)
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="form-check d-flex align-items-center" style="gap: 10px">
+                                            <input class="form-check-input" name="component[]" type="checkbox" value="{{ $component->id }}" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                {{ $component->title_component }} {{ $component->sale }}₽
+                                            </label>
+                                          </div>
+                                    </div>
+                                </div>
 
-                    </select>
-                    <label for="floatingPassword">Выберите компонент</label>
+                            @empty
+                                ваыавы
+                            @endforelse
+                        </div>
+                    </div>
                     @error('component')
                         <div class="alert alert-danger " role="alert">
                             {{ $message }}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Component;
+use App\Models\ComponentPost;
 use App\Models\Post;
 use App\Models\Tag;
 use App\Models\tagPost;
@@ -42,6 +43,12 @@ class PostController extends Controller
             'likes' => 0,
             'id_user' => $id_user,
         ]);
+        foreach ($post_data['component'] as $components){
+            ComponentPost::create([
+                'id_post' => $post->id,
+                'id_component' => $components,
+            ]);
+        }
         foreach ($tags as $tag) {
             $exitTags = Tag::where('title_tag', $tag)->first();
 
@@ -80,7 +87,7 @@ class PostController extends Controller
 
     public function showForum()
     {
-        $all_posts = Post::with('user', 'tags', 'components')->get();
+        $all_posts = Post::with(['user', 'tags', 'components'])->get();
         return view('forum', ['posts' => $all_posts]);
     }
 }

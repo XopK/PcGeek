@@ -13,7 +13,7 @@ class Component extends Model
         'title_component',
         'config_component',
         'image_components',
-        'sale'
+        'sale',
     ];
 
     public function posts()

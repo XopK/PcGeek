@@ -61,9 +61,12 @@
                                     <span>{{ $newdate }}</span>
                                 </div>
                             </div>
-                            <div class="forum-image"><img src="/images/0c9a0d7c620bf3a4f81c3ac177c9f1ee.png"
-                                    alt="0c9a0d7c620bf3a4f81c3ac177c9f1ee.png">
+                            @foreach ($post->components as $component)
+                            <div class="forum-image"><img src="/images/{{$component->image_components}}"
+                                    alt="{{$component->image_components}}">
                             </div>
+                            @break
+                            @endforeach
                         </div>
                         <div class="buttons-forum" style="margin-left:10px; text-align:center">
                             <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
