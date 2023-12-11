@@ -31,7 +31,7 @@
                     @enderror
                 </div>
                 <div class="form-floating mb-3">
-                    <textarea name="description" class="form-control rounded-3" id="floatingInput" rows="5"></textarea>
+                    <textarea name="description" style="height: 200px" class="form-control rounded-3" id="floatingInput" rows="5"></textarea>
                     <label for="floatingInput">Текст поста</label>
                     @error('description')
                         <div class="alert alert-danger " role="alert">
@@ -62,16 +62,26 @@
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div class="form-check d-flex align-items-center" style="gap: 10px">
-                                            <input class="form-check-input" name="component[]" type="checkbox" value="{{ $component->id }}" id="flexCheckDefault">
+                                            <input class="form-check-input" name="component[]" type="checkbox"
+                                                value="{{ $component->id }}" id="flexCheckDefault">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 {{ $component->title_component }} {{ $component->sale }}₽
                                             </label>
-                                          </div>
+                                        </div>
                                     </div>
                                 </div>
 
                             @empty
-                                ваыавы
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="form-check d-flex align-items-center" style="gap: 10px">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Пусто...
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             @endforelse
                         </div>
                     </div>

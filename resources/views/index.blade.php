@@ -193,44 +193,24 @@
         <div class="forum">
             <h1>Популярные треды</h1>
             <div class="forum-block">
-                <a href="/forum">
-                    <div class="card forum-list">
-                        <div class="forum-card">
-                            <p>Сборка компьютера,апгрейд</p>
-                            <h3>Сборка от чайника</h3>
-                            <p>Добрый день, данная сборка совместима? Можете подсказать, что можно заменить чтобы
-                                оптимизировать (по цене либо по производительности) вдруг что то лишнее, или наоборот не
-                                хватает.</p>
-                            <span>автор: Danya239</span>
+                @foreach ($index_posts as $post)
+                    <a href="/forum">
+                        <div class="card forum-list">
+                            <div class="forum-card">
+                                @foreach ($post->tags as $tag)
+                                    <span class="badge rounded-pill"
+                                        style="background-color: black; color:#fff;">{{ $tag->title_tag }}</span>
+                                @endforeach
+                                <h3>{{ $post->title_post }}</h3>
+                                <p class="short-text">{{ $post->description }}</p>
+                                <span>автор: {{ $post->user->login }}</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a href="/forum">
-                    <div class="card forum-list">
-                        <div class="forum-card">
-                            <p>Сборка компьютера,апгрейд</p>
-                            <h3>Сборка от чайника</h3>
-                            <p>Добрый день, данная сборка совместима? Можете подсказать, что можно заменить чтобы
-                                оптимизировать (по цене либо по производительности) вдруг что то лишнее, или наоборот не
-                                хватает.</p>
-                            <span>автор: Danya239</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="/forum">
-                    <div class="card forum-list">
-                        <div class="forum-card">
-                            <p>Сборка компьютера,апгрейд</p>
-                            <h3>Сборка от чайника</h3>
-                            <p>Добрый день, данная сборка совместима? Можете подсказать, что можно заменить чтобы
-                                оптимизировать (по цене либо по производительности) вдруг что то лишнее, или наоборот не
-                                хватает.</p>
-                            <span>автор: Danya239</span>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                @endforeach
+
             </div>
-            <a style="text-decoration: none;" class="more" href="#">
+            <a style="text-decoration: none;" class="more" href="/forum">
                 <h2>Ещё <svg xmlns="http://www.w3.org/2000/svg" width="30" height="18" viewBox="0 0 30 18"
                         fill="none">
                         <path d="M28 2L15 15L2 2" stroke="white" stroke-width="3" />
@@ -240,26 +220,14 @@
         <div class="your-pc">
             <h1>Теги</h1>
             <div class="genres-block" style="margin-top: 30px;">
-                <div class="genres-card-index">
-                    <a href="#">
-                        <span>Апгрейд</span>
-                    </a>
-                </div>
-                <div class="genres-card-index">
-                    <a href="#">
-                        <span>Апгрейд</span>
-                    </a>
-                </div>
-                <div class="genres-card-index">
-                    <a href="#">
-                        <span>Апгрейд</span>
-                    </a>
-                </div>
-                <div class="genres-card-index">
-                    <a href="#">
-                        <span>Апгрейд</span>
-                    </a>
-                </div>
+                @foreach ($tags as $tag_name)
+                    <div class="genres-card-index">
+                        <a href="#">
+                            <span>{{ $tag_name->title_tag }}</span>
+                        </a>
+                    </div>
+                @endforeach
+
             </div>
         </div>
     </div>

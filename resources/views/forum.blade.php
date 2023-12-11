@@ -32,7 +32,9 @@
                             <li><a class="dropdown-item" href="#">Кол-ву лайков</a></li>
                         </ul>
                     </div>
-                    <a href="/addPost" class="btn btn-cust">+ Добавить пост</a>
+                    @auth
+                        <a href="/addPost" class="btn btn-cust">+ Добавить пост</a>
+                    @endauth
                 </div>
                 @foreach ($posts as $post)
                     @php
@@ -62,28 +64,28 @@
                                 </div>
                             </div>
                             @foreach ($post->components as $component)
-                            <div class="forum-image"><img src="/images/{{$component->image_components}}"
-                                    alt="{{$component->image_components}}">
-                            </div>
+                                <div class="forum-image"><img src="/images/{{ $component->image_components }}"
+                                        alt="{{ $component->image_components }}">
+                                </div>
                             @break
-                            @endforeach
-                        </div>
-                        <div class="buttons-forum" style="margin-left:10px; text-align:center">
-                            <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
-                                <p>{{ $post->likes }}</p>
-                            </button>
-                            <br>
-                            <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
-                        </div>
-
+                        @endforeach
                     </div>
-                @endforeach
+                    <div class="buttons-forum" style="margin-left:10px; text-align:center">
+                        <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
+                            <p>{{ $post->likes }}</p>
+                        </button>
+                        <br>
+                        <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
+                    </div>
 
-            </div>
+                </div>
+            @endforeach
 
         </div>
+
     </div>
-    <x-footer></x-footer>
+</div>
+<x-footer></x-footer>
 </body>
 
 </html>

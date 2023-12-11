@@ -12,6 +12,13 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
+    public function index()
+    {
+        $index_posts = Post::with('user', 'tags')->limit(3)->get();
+        $tags = Tag::all();
+        return view('index', ['index_posts' => $index_posts, 'tags' => $tags]);
+    }
+
     public function show()
     {
         $component = Component::all();
@@ -43,7 +50,7 @@ class PostController extends Controller
             'likes' => 0,
             'id_user' => $id_user,
         ]);
-        foreach ($post_data['component'] as $components){
+        foreach ($post_data['component'] as $components) {
             ComponentPost::create([
                 'id_post' => $post->id,
                 'id_component' => $components,

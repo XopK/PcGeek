@@ -150,6 +150,7 @@ header {
 }
 
 .forum-card > h3 {
+    margin: 10px 0;
     color: #000;
     font-family: Jura;
     font-size: 26px;
@@ -185,6 +186,7 @@ header {
 }
 
 .your-pc > h1 {
+    text-align: center;
     color: #fff;
     font-family: Jura;
     font-size: 32px;
@@ -883,7 +885,6 @@ footer {
 
 .genres-card-index {
     border-radius: 30px;
-    width: 20%;
     padding: 50px;
     background-color: #fff;
 }
