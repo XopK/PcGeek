@@ -64,24 +64,20 @@ class PostController extends Controller
                     'title_tag' => $tag
                 ]);
 
-                // Получите ID тега и поста
                 $tagId = $newTag->id;
                 $postId = $post->id;
 
-                // Создайте запись в таблице tagPost
                 tagPost::create([
                     'id_tag' => $tagId,
                     'id_post' => $postId,
                 ]);
             } else {
-                // Если тег уже существует, проверьте, связан ли он с постом
                 $tagId = $exitTags->id;
                 $postId = $post->id;
 
                 $existingTagPost = TagPost::where('id_tag', $tagId)->where('id_post', $postId)->first();
 
                 if (!$existingTagPost) {
-                    // Если связи еще нет, создайте запись в таблице tagPost
                     TagPost::create([
                         'id_tag' => $tagId,
                         'id_post' => $postId,
@@ -97,5 +93,9 @@ class PostController extends Controller
         $all_posts = Post::with(['user', 'tags', 'components'])->get();
         
         return view('forum', ['posts' => $all_posts]);
+    }
+
+    public function branchShow(Post $id){
+        dd($id);
     }
 }

@@ -24,9 +24,7 @@ Route::get('/config', function () {
 
 Route::get('/forum', [PostController::class, 'showForum']);
 
-Route::get('/branch', function () {
-    return view('branch');
-});
+Route::get('/branch/{id}', [PostController::class, 'branchShow']);
 
 Route::get('/profile', [UserController::class, 'showUser']);
 
