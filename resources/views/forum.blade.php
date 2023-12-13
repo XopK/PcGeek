@@ -53,7 +53,7 @@
                                 <span>Автор: {{ $post->user->login }}</span>
                                 <div class="footer-forum">
                                     <div class="links-forum">
-                                        <a href="/branch/{{$post->id}}">
+                                        <a href="/branch/{{ $post->id }}">
                                             <p><img src="/images/Group 21.svg" alt="Group.svg">Ответить</p>
                                         </a>
                                         <a href="#">
@@ -87,5 +87,7 @@
 </div>
 <x-footer></x-footer>
 </body>
+<x-sign-in></x-sign-in>
+<x-sign-up></x-sign-up>
 
 </html>

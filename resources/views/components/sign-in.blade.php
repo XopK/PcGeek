@@ -9,8 +9,11 @@
                         <input type="text" name="login_log" class="form-control rounded-3" id="floatingInput">
                         <label for="floatingInput">Логин</label>
                         @error('login_log')
-                            <div class="alert alert-danger " role="alert">
-                                {{ $message }}
+                            <div class="alert alert-danger alert-dismissible">
+                                <div class="alert-text">
+                                    {{ $message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                </div>
                             </div>
                         @enderror
                     </div>
@@ -18,8 +21,11 @@
                         <input type="password" name="password_log" class="form-control rounded-3" id="floatingPassword">
                         <label for="floatingPassword">Пароль</label>
                         @error('password_log')
-                            <div class="alert alert-danger " role="alert">
-                                {{ $message }}
+                            <div class="alert alert-danger alert-dismissible">
+                                <div class="alert-text">
+                                    {{ $message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                </div>
                             </div>
                         @enderror
                     </div>

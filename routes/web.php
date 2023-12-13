@@ -18,28 +18,32 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostController::class, 'index']);
 
-Route::get('/config', function () {
-    return view('config');
-});
-
-Route::get('/forum', [PostController::class, 'showForum']);
-
-Route::get('/branch/{id}', [PostController::class, 'branchShow']);
-
-Route::get('/profile', [UserController::class, 'showUser']);
-
-Route::get('/addPost', [PostController::class, 'show']);
-
-Route::post('/addPost/create', [PostController::class, 'addPost']);
-
 Route::post('/signUp', [AuthController::class, 'signUp']);
 
 Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::post('/signIn', [AuthController::class, 'signIn']);
 
+Route::get('/forum', [PostController::class, 'showForum']);
+
+Route::get('/branch/{id}', [PostController::class, 'branchShow']);
+
+Route::middleware('checkRole:user')->group(function () {
+
+    Route::get('/profile', [UserController::class, 'showUser']);
+
+    Route::get('/addPost', [PostController::class, 'show']);
+
+    Route::post('/addPost/create', [PostController::class, 'addPost']);
+});
+
 Route::middleware('checkRole:admin')->group(function () {
+
     Route::get("/admin", function () {
         return view('admin.index');
     });
 });
+
+// Route::get('/config', function () {
+    //     return view('config');
+    // });

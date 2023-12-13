@@ -973,3 +973,7 @@ footer {
     line-clamp: 3;
     -webkit-box-orient: vertical;
 }
+.alert-text {
+    display: flex;
+    align-items: center;
+}

@@ -16,8 +16,12 @@ class CheckRole
      */
     public function handle(Request $request, Closure $next, $role)
     {
-        if ($request->user()->role()->where('title_role', '=', $role)->exists()) {
-            return $next($request);
+        if (auth()->check()) {
+            $user = auth()->user();
+
+            if ($user->role()->where('title_role', '=', $role)->exists()) {
+                return $next($request);
+            }
         }
 
         abort(403, 'У вас недостаточно прав!');

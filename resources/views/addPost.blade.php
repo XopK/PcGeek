@@ -25,27 +25,36 @@
                     <input type="text" name="title_post" class="form-control rounded-3" id="floatingInput">
                     <label for="floatingInput">Название поста</label>
                     @error('title_post')
-                        <div class="alert alert-danger " role="alert">
+                    <div class="alert alert-danger alert-dismissible">
+                        <div class="alert-text">
                             {{ $message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                         </div>
+                    </div>
                     @enderror
                 </div>
                 <div class="form-floating mb-3">
                     <textarea name="description" style="height: 200px" class="form-control rounded-3" id="floatingInput" rows="5"></textarea>
                     <label for="floatingInput">Текст поста</label>
                     @error('description')
-                        <div class="alert alert-danger " role="alert">
+                    <div class="alert alert-danger alert-dismissible">
+                        <div class="alert-text">
                             {{ $message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                         </div>
+                    </div>
                     @enderror
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" name="tags" class="form-control rounded-3" id="floatingPassword">
                     <label for="floatingPassword">Теги (вводите через запятую и без пробелов)</label>
                     @error('tags')
-                        <div class="alert alert-danger " role="alert">
+                    <div class="alert alert-danger alert-dismissible">
+                        <div class="alert-text">
                             {{ $message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                         </div>
+                    </div>
                     @enderror
                 </div>
                 <div class="form-floating mb-3">

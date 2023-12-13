@@ -69,10 +69,14 @@ class AuthController extends Controller
             Auth::attempt([
                 'login' => $user_login['login_log'],
                 'password' => $user_login['password_log']
-                
+
             ])
         ) {
-            return redirect("/")->with("succes", "");
+            if (Auth::user()->id_role == 1) {
+                return redirect("admin");
+            } else {
+                return redirect("/")->with("succes", "");
+            }
         } else {
             return redirect()->back()->with("error", "Неверный логин или пароль!!!");
         }

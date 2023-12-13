@@ -224,5 +224,7 @@
     </div>
     <x-footer></x-footer>
 </body>
+<x-sign-in></x-sign-in>
+<x-sign-up></x-sign-up>
 
 </html>
