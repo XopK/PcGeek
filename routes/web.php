@@ -37,3 +37,9 @@ Route::post('/signUp', [AuthController::class, 'signUp']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::post('/signIn', [AuthController::class, 'signIn']);
+
+Route::middleware('checkRole:admin')->group(function () {
+    Route::get("/admin", function () {
+        return view('admin.index');
+    });
+});
