@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap");
+
+.container-fluid > a {
+    color: #ffffff;
+    font-family: Jura;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.container-fluid > a:hover {
+    color: #ffffff;
+}
+.nav-item > a {
+    color: #ffffff;
+    font-size: 18px;
+    font-family: Jura;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.form-add-comp {
+    width: 40%;
+    color: #000000;
+    font-size: 18px;
+    font-family: Jura;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ComponentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +43,8 @@ Route::middleware('checkRole:admin')->group(function () {
     Route::get("/admin", function () {
         return view('admin.index');
     });
+
+    Route::get('/admin/addComponent', [ComponentController::class, 'showAddComponent']);
 });
 
 // Route::get('/config', function () {
