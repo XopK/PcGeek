@@ -11,14 +11,14 @@
              <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                  id="menu">
                  <li class="nav-item">
-                     <a href="#" class="nav-link d-flex align-items-center px-0">
+                     <a href="/admin" class="nav-link d-flex align-items-center px-0">
                          <span class="material-symbols-outlined">
                              forum
                          </span> <span class="ms-1 d-none d-sm-inline px-2">Посты</span>
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="/admin/addComponent" class="nav-link d-flex align-items-center px-0">
+                     <a href="/admin/components" class="nav-link d-flex align-items-center px-0">
                          <span class="material-symbols-outlined">
                              settings
                          </span> <span class="ms-1 d-none d-sm-inline px-2">Компоненты</span>

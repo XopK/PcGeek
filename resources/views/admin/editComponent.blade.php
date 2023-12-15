@@ -21,12 +21,14 @@
     <div class="container-fluid">
         <x-admin-sidebar></x-admin-sidebar>
         <div class="col p-4 form-add-comp">
-            <h1 class="mb-3">Добавление компонента</h1>
-            <form action="/admin/addComponent/create" method="POST" enctype="multipart/form-data">
+            <h1 class="mb-3">Редактирование компонента</h1>
+            <form action="/admin/components/update/{{ $edits->id }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('PATCH')
                 <div class="mb-3">
                     <label for="titleСomponent" class="form-label">Назвавние компонента</label>
-                    <input type="text" class="form-control" name="title_component" id="titleСomponent">
+                    <input type="text" value="{{ $edits->title_component }}" class="form-control"
+                        name="title_component" id="titleСomponent">
                     @error('title_component')
                         <div class="alert alert-danger alert-dismissible">
                             <div class="alert-text">
@@ -38,7 +40,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="configСomponent" class="form-label">Характеристики компонента</label>
-                    <input type="text" class="form-control" name="config_component" id="configСomponent">
+                    <input type="text" class="form-control" value="{{ $edits->config_component }}"
+                        name="config_component" id="configСomponent">
                     @error('config_component')
                         <div class="alert alert-danger alert-dismissible">
                             <div class="alert-text">
@@ -50,7 +53,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="formFile" class="form-label">Фотография компонента</label>
-                    <input class="form-control" type="file" name="image_components" id="formFile">
+                    <input class="form-control" type="file" name="updateComponent" id="formFile">
                     @error('image_components')
                         <div class="alert alert-danger alert-dismissible">
                             <div class="alert-text">
@@ -62,7 +65,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="sale" class="form-label">Цена</label>
-                    <input type="number" name="sale" class="form-control" id="sale">
+                    <input type="number" value="{{ $edits->sale }}" name="sale" class="form-control"
+                        id="sale">
                     @error('sale')
                         <div class="alert alert-danger alert-dismissible">
                             <div class="alert-text">
@@ -72,7 +76,7 @@
                         </div>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-outline-primary">Добавление</button>
+                <button type="submit" class="btn btn-outline-warning">Редактировать</button>
                 @if (session('succes'))
                     <div class="alert alert-success alert-dismissible mt-3">
                         <div class="alert-text">

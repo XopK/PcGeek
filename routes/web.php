@@ -44,6 +44,16 @@ Route::middleware('checkRole:admin')->group(function () {
         return view('admin.index');
     });
 
+    Route::get('/admin/components', [ComponentController::class, 'showComponents']);
+
+    Route::get('/admin/components/edit/{edit}', [ComponentController::class, 'editComponent']);
+
+    Route::patch('/admin/components/update/{component}', [ComponentController::class, 'updateComponent']);
+
+    Route::delete('/admin/components/delete/{component}', [ComponentController::class, 'deleteComponent']);
+
+    Route::post('/admin/addComponent/create', [ComponentController::class, 'addComponent']);
+
     Route::get('/admin/addComponent', [ComponentController::class, 'showAddComponent']);
 });
 

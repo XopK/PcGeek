@@ -28,3 +28,9 @@
     font-weight: 600;
     line-height: normal;
 }
+.card-body {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+}

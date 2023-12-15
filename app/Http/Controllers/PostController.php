@@ -91,11 +91,14 @@ class PostController extends Controller
     public function showForum()
     {
         $all_posts = Post::with(['user', 'tags', 'components'])->get();
-        
+
         return view('forum', ['posts' => $all_posts]);
     }
 
-    public function branchShow(Post $id){
-        dd($id);
+    public function branchShow($id)
+    {
+        $data = Post::where('id', $id)->get();
+
+        dd($data);
     }
 }

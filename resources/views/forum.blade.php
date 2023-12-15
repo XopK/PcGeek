@@ -53,31 +53,35 @@
                                 <span>Автор: {{ $post->user->login }}</span>
                                 <div class="footer-forum">
                                     <div class="links-forum">
-                                        <a href="/branch/{{ $post->id }}">
-                                            <p><img src="/images/Group 21.svg" alt="Group.svg">Ответить</p>
-                                        </a>
-                                        <a href="#">
-                                            <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
-                                        </a>
+                                        @auth
+                                            <a href="/branch/{{ $post->id }}">
+                                                <p><img src="/images/Group 21.svg" alt="Group.svg">Ответить</p>
+                                            </a>
+                                            <a href="#">
+                                                <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
+                                            </a>
+                                        @endauth
                                     </div>
                                     <span>{{ $newdate }}</span>
                                 </div>
                             </div>
                             @foreach ($post->components as $component)
-                                <div class="forum-image"><img src="/images/{{ $component->image_components }}"
+                                <div class="forum-image"><img
+                                        src="storage/imgComponents/{{ $component->image_components }}"
                                         alt="{{ $component->image_components }}">
                                 </div>
                             @break
                         @endforeach
                     </div>
-                    <div class="buttons-forum" style="margin-left:10px; text-align:center">
-                        <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
-                            <p>{{ $post->likes }}</p>
-                        </button>
-                        <br>
-                        <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
-                    </div>
-
+                    @auth
+                        <div class="buttons-forum" style="margin-left:10px; text-align:center">
+                            <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
+                                <p>{{ $post->likes }}</p>
+                            </button>
+                            <br>
+                            <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
+                        </div>
+                    @endauth
                 </div>
             @endforeach
 
