@@ -52,4 +52,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class, 'id_role');
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'id_user');
+    }
 }

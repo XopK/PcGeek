@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Component;
 use App\Models\ComponentPost;
 use App\Models\Post;
@@ -98,7 +99,22 @@ class PostController extends Controller
     public function branchShow($id)
     {
         $data = Post::with('components', 'user')->where('id', $id)->get()->first();
+        $comment = Comment::with('users')->get();
 
-        return view('branch', ['branch' => $data]);
+        return view('branch', ['branch' => $data, 'comments' => $comment]);
+    }
+
+    public function addComment(Request $request, $branch)
+    {
+        $comment = $request->all();
+        $id_user = Auth::user()->id;
+
+        $addComent = Comment::create([
+            'comment' => $comment['comment'],
+            'id_user' => $id_user,
+            'id_post' => $branch,
+            'like_comment' => 0,
+        ]);
+        return redirect()->back()->with('succes', 'Комментарий оставлен');
     }
 }

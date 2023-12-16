@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title_post');
             $table->longText('description');
-            $table->integer('likes');
+            $table->integer('likes')->default(0);
             $table->foreignId('id_user')->references('id')->on('users');
             $table->timestamps();
         });

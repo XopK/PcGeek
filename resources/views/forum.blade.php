@@ -61,6 +61,11 @@
                                                 <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
                                             </a>
                                         @endauth
+                                        @guest
+                                            <a href="/branch/{{ $post->id }}">
+                                                <p><img src="/images/visibli.svg" alt="Group.svg">Просмотреть</p>
+                                            </a>
+                                        @endguest
                                     </div>
                                     <span>{{ $newdate }}</span>
                                 </div>

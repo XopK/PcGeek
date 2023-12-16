@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('comment');
             $table->foreignId('id_user')->references('id')->on('users');
             $table->foreignId('id_post')->references('id')->on('posts');
+            $table->integer('like_comment')->default(0);
             $table->timestamps();
         });
     }

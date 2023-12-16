@@ -36,6 +36,8 @@ Route::middleware('checkRole:user')->group(function () {
     Route::get('/addPost', [PostController::class, 'show']);
 
     Route::post('/addPost/create', [PostController::class, 'addPost']);
+
+    Route::post('/branch/comment/{branch}', [PostController::class, 'addComment']);
 });
 
 Route::middleware('checkRole:admin')->group(function () {
