@@ -17,7 +17,7 @@
 <body>
     <div class="container branch-title">
         <x-header></x-header>
-        <h1>Второй слот под м2 с радиатором</h1>
+        <h1>{{$branch->title_post}}</h1>
         <div class="title-branch">
             <div class="forum-post">
                 <div class="forum-block-info">
@@ -25,15 +25,12 @@
                         <div class="profile-user">
                             <img src="/images/Group 29.svg" alt="Group 29.svg">
                             <div class="profile-text">
-                                <h3>IFISdfi</h3>
+                                <h3>{{$branch->user->login}}</h3>
                                 <p>Автор поста</p>
                                 <span>10 минут назад</span>
                             </div>
                         </div>
-                        <p>Второй слот под м2 который с радиатором, работает так же как первый без
-                            радиатора?
-                            Собираю пк, много мат. плат пересматриваю, пишут то нижний слот м2 где то может медленно
-                            работать или еще какие то проблемы. Так как на самом деле?</p>
+                        <p>{{$branch->description}}</p>
                         <div class="footer-forum">
                             <div class="links-forum">
                                 <a href="#">
@@ -45,7 +42,7 @@
                 </div>
                 <div class="buttons-forum" style="margin-left:10px; text-align:center">
                     <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
-                        <p>22</p>
+                        <p>{{$branch->likes}}</p>
                     </button>
                     <br>
                     <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
@@ -56,15 +53,17 @@
         </div>
         <div class="config-branch" style="text-align: center">
             <h2>Конфигурация компьютера</h2>
+            @foreach ($branch->components as $components)
             <div class="config-component">
-                <div class="image-config-component"><img src="/images/0c9a0d7c620bf3a4f81c3ac177c9f1ee.png"
-                        alt="0c9a0d7c620bf3a4f81c3ac177c9f1ee.png"></div>
+                <div class="image-config-component"><img src="/storage/imgComponents/{{$components->image_components}}"
+                        alt="{{$components->image_component}}"></div>
                 <div class="text-branch-component">
-                    <h3>Материнская плата ASUS TUF GAMING B550-PLUS</h3>
-                    <span>[AM4, AMD B550, 4xDDR4-3200 МГц, 2xPCI-Ex16, 2xM.2, Standard-ATX]</span>
-                    <p>15 899₽</p>
+                    <h3>{{$components->title_component}}</h3>
+                    <span>[{{$components->config_component}}]</span>
+                    <p>{{$components->sale}}₽</p>
                 </div>
             </div>
+            @endforeach
         </div>
 
         <div class="comment">

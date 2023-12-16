@@ -97,8 +97,8 @@ class PostController extends Controller
 
     public function branchShow($id)
     {
-        $data = Post::where('id', $id)->get();
+        $data = Post::with('components', 'user')->where('id', $id)->get()->first();
 
-        dd($data);
+        return view('branch', ['branch' => $data]);
     }
 }
