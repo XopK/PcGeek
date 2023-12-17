@@ -38,6 +38,22 @@ Route::middleware('checkRole:user')->group(function () {
     Route::post('/addPost/create', [PostController::class, 'addPost']);
 
     Route::post('/branch/comment/{branch}', [PostController::class, 'addComment']);
+
+    Route::get('/like/{like}', [PostController::class, 'likePost']);
+
+    Route::get('/disslike/{disslike}', [PostController::class, 'disslikePost']);
+
+    Route::get('/likeComment/{like}', [PostController::class, 'likeComment']);
+
+    Route::get('/disslikeComment/{disslike}', [PostController::class, 'disslikeComment']);
+
+    Route::get('/favorite/{favorite}', [PostController::class, 'FavoriteAdd']);
+
+    Route::get('/removeFavorite/{favorite}', [PostController::class, 'FavoriteRemove']);
+
+    Route::delete('/deleteBranch/{delete}', [PostController::class, 'deleteBranch']);
+
+    Route::get('/editPost/{edit}', [PostController::class, 'editPost']);
 });
 
 Route::middleware('checkRole:admin')->group(function () {

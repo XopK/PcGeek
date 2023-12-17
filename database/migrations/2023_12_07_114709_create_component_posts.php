@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('component_posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_post')->references('id')->on('posts');
-            $table->foreignId('id_component')->references('id')->on('components');
+            $table->foreignId('id_post')->references('id')->on('posts')->onDelete('cascade');
+            $table->foreignId('id_component')->references('id')->on('components')->onDelete('cascade');
             $table->timestamps();
         });
     }

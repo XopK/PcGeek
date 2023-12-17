@@ -31,8 +31,11 @@
                     </div>
                     <button class="w-100 mb-2 btn btn-lg rounded-3 btn-cost" type="submit">Войти</button>
                     @if (session('error'))
-                        <div class="alert alert-danger " role="alert">
-                            {{ session('error') }}
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ session('error') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
                         </div>
                     @else
                     @endif

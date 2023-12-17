@@ -27,33 +27,62 @@
                             <div class="profile-text">
                                 <h3>{{ $branch->user->login }}</h3>
                                 <p>Автор поста</p>
-                                <span>10 минут назад</span>
+                                @php
+                                    $diff_post = $branch->created_at->diffForHumans();
+                                    $idBranch = null;
+                                    $currentUserFavorites = [];
+                                    if (Auth::user()) {
+                                        $idBranch = $branch->id;
+                                        $currentUserFavorites = Auth::user()
+                                            ->favorites->pluck('id_post')
+                                            ->toArray();
+                                    }
+
+                                @endphp
+                                <span>{{ $diff_post }}</span>
                             </div>
                         </div>
                         <p>{{ $branch->description }}</p>
                         <div class="footer-forum">
                             <div class="links-forum">
-                                <a href="#">
-                                    <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
-                                </a>
+                                @if (in_array($idBranch, $currentUserFavorites))
+                                    <a href="/removeFavorite/{{ $branch->id }}">
+                                        <p><img src="/images/mark.svg" alt="mark.svg">В избранном</p>
+                                    </a>
+                                @else
+                                    <a href="/favorite/{{ $branch->id }}">
+                                        <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
+                                    </a>
+                                @endif
                             </div>
                         </div>
+                        @if (session('error'))
+                            <div class="alert alert-danger alert-dismissible mt-3">
+                                <div class="alert-text">
+                                    {{ session('error') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                </div>
+                            </div>
+                        @else
+                        @endif
                     </div>
                 </div>
-                @auth
-                    <div class="buttons-forum" style="margin-left:10px; text-align:center">
-                        <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
-                            <p>{{ $branch->likes }}</p>
-                        </button>
-                        <br>
-                        <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
-                    </div>
-                @endauth
+
+                <div class="buttons-forum" style="margin-left:10px; text-align:center">
+                    <a href="/like/{{ $branch->id }}" class="btn like"><img src="/images/Vector 9 (1).svg"
+                            alt="up">
+                        <span>{{ $branch->likesCount() }}</span>
+                    </a>
+                    <br>
+                    <a href="/disslike/{{ $branch->id }}" class="btn diss-like"><img src="/images/Group 23.svg"
+                            alt="down"></a>
+                </div>
+
             </div>
 
         </div>
         <div class="config-branch" style="text-align: center">
-            <h2>Конфигурация компьютера</h2>
+            <h2>Конфигурация</h2>
             @foreach ($branch->components as $components)
                 <div class="config-component ">
                     <div class="image-config-component"><img
@@ -67,50 +96,63 @@
                 </div>
             @endforeach
         </div>
-        @auth
-            <div class="comment">
-                <h3>Комментарии</h3>
-                <form action="/branch/comment/{{ $branch->id }}" class="d-flex" method="POST">
-                    @csrf
-                    <input class="form-control form-control-lg" name="comment" type="text"
-                        placeholder="напишите комментарий" style="width: 85%" aria-label=".form-control-lg example">
-                    <button type="submit" class="btn btn-primary mx-2">Отправить</button>
-                </form>
-                <div class="comment-list">
-                    @forelse ($comments as $comment)
-                        <hr>
-                        <div class="comment-user">
-                            <div class="comment-img">
-                                <img src="/images/Group 31.svg" alt="Group 31.svg">
-                                <div class="comment-img-name">
-                                    <h2>{{ $comment->users->login }}</h2>
-                                    @if ($comment->users->id == $branch->user->id)
-                                        <p class="m-0" style="font-size: 14px">Автор поста</p>
-                                    @endif
-                                    <span>2 минуты назад</span>
-                                </div>
-                            </div>
-                            <div class="message">
-                                <p>{{ $comment->comment }}</p>
-                            </div>
-                            <div class="footer-message">
-                                <button class="btn btn-like"><img src="/images/Group 32.svg" alt="Group 32.svg"></button>
-                                <span>{{ $comment->like_comment }}</span>
-                                <button class="btn btn-disslike"><img src="/images/Group 33.svg"
-                                        alt="Group 33.svg"></button>
-                            </div>
-                        </div>
-                    @empty
-                        <hr>
-                        <div class="comment-user">
-                            <h1 style="color: white; text-align:center">Будьте первым!</h1>
-                            <h5 style="color: white; text-align:center">оставьте комментарий</h5>
-                        </div>
-                        <hr>
-                    @endforelse
+
+        <div id="comm" class="comment">
+            <h3>Комментарии</h3>
+            <form action="/branch/comment/{{ $branch->id }}" class="d-flex" method="POST">
+                @csrf
+                <input class="form-control form-control-lg" name="comment" type="text"
+                    placeholder="напишите комментарий" style="width: 85%" aria-label=".form-control-lg example">
+                <button type="submit" class="btn btn-primary mx-2">Отправить</button>
+            </form>
+            @if (session('errorLike'))
+                <div class="alert alert-danger alert-dismissible mt-3" style="width: 94%">
+                    <div class="alert-text">
+                        {{ session('errorLike') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
                 </div>
+            @else
+            @endif
+            <div class="comment-list">
+                @forelse ($comments as $comment)
+                    @php
+                        $diff = $comment->created_at->diffForHumans();
+                    @endphp
+                    <hr>
+                    <div class="comment-user">
+                        <div class="comment-img">
+                            <img src="/images/Group 31.svg" alt="Group 31.svg">
+                            <div class="comment-img-name">
+                                <h2>{{ $comment->users->login }}</h2>
+                                @if ($comment->users->id == $branch->user->id)
+                                    <p class="m-0" style="font-size: 14px">Автор поста</p>
+                                @endif
+                                <span>{{ $diff }}</span>
+                            </div>
+                        </div>
+                        <div class="message">
+                            <p>{{ $comment->comment }}</p>
+                        </div>
+                        <div class="footer-message">
+                            <a href="/likeComment/{{ $comment->id }}" class="btn btn-like"><img
+                                    src="/images/Group 32.svg" alt="Group 32.svg"></a>
+                            <span>{{ $comment->likesCommCount() }}</span>
+                            <a href="/disslikeComment/{{ $comment->id }}" class="btn btn-disslike"><img
+                                    src="/images/Group 33.svg" alt="Group 33.svg"></a>
+                        </div>
+                    </div>
+                @empty
+                    <hr>
+                    <div class="comment-user">
+                        <h1 style="color: white; text-align:center">Будьте первым!</h1>
+                        <h5 style="color: white; text-align:center">оставьте комментарий</h5>
+                    </div>
+                    <hr>
+                @endforelse
             </div>
-        @endauth
+        </div>
+
     </div>
     <x-footer></x-footer>
 </body>

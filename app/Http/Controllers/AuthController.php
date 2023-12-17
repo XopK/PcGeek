@@ -23,7 +23,7 @@ class AuthController extends Controller
                 "email.required" => "Поле обязательно для заполнения!",
                 "email.email" => "Введите правильный адрес!",
                 "email.unique" => "Данный адрес занят!",
-                "login.unique" => "Данные логин занят!",
+                "login.unique" => "Данный логин занят!",
                 "password.required" => "Поле обязательно для заполнения!",
                 "confirm_password.required" => "Поле обязательно для заполнения!",
                 "login.required" => "Поле обязательно для заполнения!",

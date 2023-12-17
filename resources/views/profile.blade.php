@@ -30,7 +30,7 @@
                 <h1 style="margin-bottom: 20px">Посты</h1>
                 @forelse ($user_posts as $post)
                     <div class="user-block-post">
-                        <a href="/branch">
+                        <a href="/branch/{{ $post->id }}">
                             <div class="text-user-post">
                                 <span>
                                     @foreach ($post->tags as $tag)
@@ -38,12 +38,24 @@
                                             style="background-color: black; color:#fff;">{{ $tag->title_tag }}</span>
                                     @endforeach
                                 </span>
-                                <h3>{{ $post->title_post }}</h3>
-                                <p class="short-text">{{ $post->description }}</p>
+                                <div class="in">
+                                    <h3 class="mt-2">{{ $post->title_post }}</h3>
+                                    <p class="short-text">{{ $post->description }}</p>
+                                </div>
                             </div>
-                            <div class="buttons-profile"><a type="button" href="#"><img
-                                        src="/images/Group 39.svg" alt="Group 39.svg"></a>
+                            <div class="edit-delete">
+                                <form action="/deleteBranch/{{ $post->id }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn  buttons-profile p-2" type="submit"> <img
+                                            src="/images/Group 39.svg" alt="Group 39.svg"></button>
+
+                                </form>
+                                <div class="btn buttons-profile p-2"><a type="button" href="/editPost/{{$post->id}}"><img
+                                            src="/images/edit.svg" alt="edit.svg"></a>
+                                </div>
                             </div>
+
                         </a>
                     </div>
                 @empty
@@ -55,49 +67,33 @@
 
             <div class="favorite-post">
                 <h1 style="margin-bottom: 20px">Избранное</h1>
+                @forelse ($user_favorite as $favorite)
+                    <div class="user-block-post">
+                        <a href="/branch/{{ $favorite->post->id }}">
+                            <div class="text-user-post">
+                                <span>
+                                    @foreach ($favorite->post->tags as $tag)
+                                        <span class="badge rounded-pill"
+                                            style="background-color: black; color:#fff;">{{ $tag->title_tag }}</span>
+                                    @endforeach
+                                </span>
+                                <div class="in">
+                                    <h3 class="mt-2">{{ $favorite->post->title_post }}</h3>
+                                    <p>{{ $favorite->post->description }}</p>
+                                </div>
 
-                <div class="user-block-post">
-                    <a href="/branch">
-                        <div class="text-user-post">
-                            <span>Сборка компьютера, апгрейд</span>
-                            <h3>Сборка от чайника</h3>
-                            <p>Добрый день, данная сборка совместима? Можете подсказать, что можно заменить чтобы
-                                оптимизировать (по цене либо по производительности) вдруг что то лишнее, или наоборот не
-                                хватает.</p>
-                        </div>
-                        <div class="buttons-profile"><a type="button" href="#"><img src="/images/mark.svg"
-                                    alt="mark.svg"></a>
-                        </div>
-                    </a>
-                </div>
-                <div class="user-block-post">
-                    <a href="/branch">
-                        <div class="text-user-post">
-                            <span>Сборка компьютера, апгрейд</span>
-                            <h3>Сборка от чайника</h3>
-                            <p>Добрый день, данная сборка совместима? Можете подсказать, что можно заменить чтобы
-                                оптимизировать (по цене либо по производительности) вдруг что то лишнее, или наоборот не
-                                хватает.</p>
-                        </div>
-                        <div class="buttons-profile"><a type="button" href="#"><img src="/images/mark.svg"
-                                    alt="mark.svg"></a>
-                        </div>
-                    </a>
-                </div>
-                <div class="user-block-post">
-                    <a href="/branch">
-                        <div class="text-user-post">
-                            <span>Сборка компьютера, апгрейд</span>
-                            <h3>Сборка от чайника</h3>
-                            <p>Добрый день, данная сборка совместима? Можете подсказать, что можно заменить чтобы
-                                оптимизировать (по цене либо по производительности) вдруг что то лишнее, или наоборот не
-                                хватает.</p>
-                        </div>
-                        <div class="buttons-profile"><a type="button" href="#"><img src="/images/mark.svg"
-                                    alt="mark.svg"></a>
-                        </div>
-                    </a>
-                </div>
+                            </div>
+                            <div class="buttons-profile"><a type="button"
+                                    href="/removeFavorite/{{ $favorite->post->id }}"><img src="/images/mark.svg"
+                                        alt="mark.svg"></a>
+                            </div>
+                        </a>
+                    </div>
+                @empty
+                    <div class="empty">
+                        <h1>Пусто...</h1>
+                    </div>
+                @endforelse
             </div>
         </div>
     </div>

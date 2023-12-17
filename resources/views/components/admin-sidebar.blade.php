@@ -24,7 +24,7 @@
                          </span> <span class="ms-1 d-none d-sm-inline px-2">Компоненты</span>
                      </a>
                  </li>
-                 <li class="nav-item">
+                 {{-- <li class="nav-item">
                      <a href="#" class="nav-link d-flex align-items-center px-0">
                          <span class="material-symbols-outlined">
                              warning
@@ -37,7 +37,7 @@
                              shield
                          </span> <span class="ms-1 d-none d-sm-inline px-2">Модераторы</span>
                      </a>
-                 </li>
+                 </li> --}}
              </ul>
              <hr>
              <div class="dropdown pb-4">

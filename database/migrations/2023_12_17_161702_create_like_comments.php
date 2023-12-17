@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('favorites', function (Blueprint $table) {
+        Schema::create('like_comments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_post')->references('id')->on('posts')->onDelete('cascade');
             $table->foreignId('id_user')->references('id')->on('users');
+            $table->foreignId('id_comment')->references('id')->on('comments')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('favorites');
+        Schema::dropIfExists('like_comments');
     }
 };

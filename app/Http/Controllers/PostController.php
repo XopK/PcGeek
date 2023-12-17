@@ -5,9 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Models\Component;
 use App\Models\ComponentPost;
+use App\Models\Favorite;
+use App\Models\LikeBranch;
+use App\Models\LikeComment;
 use App\Models\Post;
 use App\Models\Tag;
 use App\Models\tagPost;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -48,7 +52,6 @@ class PostController extends Controller
         $post = Post::create([
             'title_post' => $post_data['title_post'],
             'description' => $post_data['description'],
-            'likes' => 0,
             'id_user' => $id_user,
         ]);
         foreach ($post_data['component'] as $components) {
@@ -98,8 +101,8 @@ class PostController extends Controller
 
     public function branchShow($id)
     {
-        $data = Post::with('components', 'user')->where('id', $id)->get()->first();
-        $comment = Comment::with('users')->get();
+        $data = Post::with('components', 'user', 'favorites')->where('id', $id)->get()->first();
+        $comment = Comment::with('users')->where('id_post', $id)->get();
 
         return view('branch', ['branch' => $data, 'comments' => $comment]);
     }
@@ -113,8 +116,119 @@ class PostController extends Controller
             'comment' => $comment['comment'],
             'id_user' => $id_user,
             'id_post' => $branch,
-            'like_comment' => 0,
         ]);
         return redirect()->back()->with('succes', 'Комментарий оставлен');
+    }
+
+    public function likePost($like)
+    {
+        $user = Auth::user();
+        $existingLike = LikeBranch::where('id_user', $user->id)
+            ->where('id_post', $like)
+            ->first();
+
+        if ($existingLike) {
+            return redirect()->back()->with('error', 'Вы не можете поставить лайк!');
+        } else {
+            LikeBranch::create([
+                'id_user' => $user->id,
+                'id_post' => $like,
+            ]);
+            return redirect()->back()->with('succes', 'Лайк поставлен!');
+        }
+    }
+
+    public function disslikePost($disslike)
+    {
+        $user = Auth::user();
+        $existingDiss = LikeBranch::where('id_user', $user->id)
+            ->where('id_post', $disslike)
+            ->first();
+
+        if ($existingDiss) {
+            $existingDiss->delete();
+            return redirect()->back()->with('succes', 'Лайк убран!');
+        } else {
+            return redirect()->back()->with('error', 'Вы не можете поставить лайк!');
+        }
+    }
+
+    public function likeComment($like)
+    {
+        $user = Auth::user();
+        $existingLike = LikeComment::where('id_user', $user->id)
+            ->where('id_comment', $like)
+            ->first();
+
+        if ($existingLike) {
+            return redirect()->back()->with('error', 'Вы не можете поставить лайк!');
+        } else {
+            LikeComment::create([
+                'id_user' => $user->id,
+                'id_comment' => $like,
+            ]);
+            return redirect()->back()->with('succes', 'Лайк поставлен!');
+        }
+    }
+
+    public function disslikeComment($disslike)
+    {
+        $user = Auth::user();
+        $existingDiss = LikeComment::where('id_user', $user->id)
+            ->where('id_comment', $disslike)
+            ->first();
+
+        if ($existingDiss) {
+            $existingDiss->delete();
+            return redirect()->back()->with('succes', 'Лайк убран!');
+        } else {
+            return redirect()->back()->with('errorLike', 'Вы не можете поставить лайк!');
+        }
+    }
+
+    public function FavoriteAdd($favorite)
+    {
+        $user = Auth::user();
+
+        $existingFavorite = Favorite::where('id_user', $user->id)
+            ->where('id_post', $favorite)
+            ->first();
+
+        if ($existingFavorite) {
+            return redirect()->back()->with('error', 'Вы уже добавили пост в избранное!');
+        } else {
+            Favorite::create([
+                'id_user' => $user->id,
+                'id_post' => $favorite,
+            ]);
+            return redirect()->back()->with('succes', 'Добавлено в избранное!');
+        }
+    }
+
+    public function FavoriteRemove($favorite)
+    {
+        $user = Auth::user();
+        $existingRemove = Favorite::where('id_user', $user->id)
+            ->where('id_post', $favorite)
+            ->first();
+
+        if ($existingRemove) {
+            $existingRemove->delete();
+            return redirect()->back()->with('succes', 'Убранно из избранного!');
+        } else {
+            return redirect()->back()->with('errorLike', 'Вы не можете добавить в избранное!');
+        }
+    }
+
+    public function deleteBranch(Post $delete){
+        $delete->delete();
+
+        return redirect()->back()->with('succes', 'Пост удален!');
+    }
+
+    public function editPost($edit){
+        $edit = Post::where('id', $edit)->with('tags')->get()->first();
+        dd($edit->tags);
+        return view ('editPost', ['edit' => $edit]);
     }
 }

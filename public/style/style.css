@@ -530,20 +530,11 @@ footer {
 }
 
 .like {
-    padding: 5px 0;
+    margin-top: 15px;
+    width: 58px;
+    background-color: #ffffff;
     text-align: center;
-    width: 60px;
-    height: 63px;
-    border-radius: 15px;
-    background: #fff;
-    color: rgba(0, 0, 0, 0.65);
-    font-family: Jura;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
     transition: all 0.3s ease-out;
-    border: none;
 }
 
 .like:hover {
@@ -818,14 +809,18 @@ footer {
     text-align: left;
     background-color: #fff;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
 .text-user-post {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
     width: 90%;
+}
+
+.in{
+    font-size: 17px;
+    color: #000000;
+    text-decoration: none;
 }
 
 .text-user-post > span {

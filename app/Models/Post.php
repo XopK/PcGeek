@@ -12,7 +12,6 @@ class Post extends Model
     protected $fillable = [
         'title_post',
         'description',
-        'likes',
         'id_user'
     ];
 
@@ -36,5 +35,20 @@ class Post extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class, 'id_post');
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(LikeBranch::class, 'id_post');
+    }
+
+    public function likesCount()
+    {
+        return $this->likes->count();
+    }
+
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class, 'id_post');
     }
 }

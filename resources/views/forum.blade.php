@@ -36,10 +36,25 @@
                         <a href="/addPost" class="btn btn-cust">+ Добавить пост</a>
                     @endauth
                 </div>
+                @if (session('error'))
+                    <div class="alert alert-danger alert-dismissible mt-3">
+                        <div class="alert-text">
+                            {{ session('error') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    </div>
+                @else
+                @endif
                 @foreach ($posts as $post)
                     @php
-                        $date = $post->created_at;
-                        $newdate = date('d.m.Y', strtotime($date));
+                    $date = $post->created_at;
+                            $newdate = date('d.m.Y', strtotime($date));
+                        if (Auth::user()) {
+                            $idBranch = $post->id;
+                            $currentUserFavorites = Auth::user()
+                                ->favorites->pluck('id_post')
+                                ->toArray();
+                        }
                     @endphp
                     <div class="forum-post">
                         <div class="forum-block-info">
@@ -57,9 +72,16 @@
                                             <a href="/branch/{{ $post->id }}">
                                                 <p><img src="/images/Group 21.svg" alt="Group.svg">Ответить</p>
                                             </a>
-                                            <a href="#">
-                                                <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное</p>
-                                            </a>
+                                            @if (in_array($idBranch, $currentUserFavorites))
+                                                <a href="/removeFavorite/{{ $post->id }}">
+                                                    <p><img src="/images/mark.svg" alt="mark.svg">В избранном</p>
+                                                </a>
+                                            @else
+                                                <a href="/favorite/{{ $post->id }}">
+                                                    <p><img src="/images/Rectangle 1.svg" alt="Rectangle 1.svg">Избранное
+                                                    </p>
+                                                </a>
+                                            @endif
                                         @endauth
                                         @guest
                                             <a href="/branch/{{ $post->id }}">
@@ -80,16 +102,17 @@
                     </div>
                     @auth
                         <div class="buttons-forum" style="margin-left:10px; text-align:center">
-                            <button class="like"><img src="/images/Vector 9 (1).svg" alt="up">
-                                <p>{{ $post->likes }}</p>
-                            </button>
+                            <a href="/like/{{ $post->id }}" class="btn like"><img src="/images/Vector 9 (1).svg"
+                                    alt="up">
+                                <span>{{ $post->likesCount() }}</span>
+                            </a>
                             <br>
-                            <button class="btn diss-like"><img src="/images/Group 23.svg" alt="down"></button>
+                            <a href="/disslike/{{ $post->id }}" class="btn diss-like"><img
+                                    src="/images/Group 23.svg" alt="down"></a>
                         </div>
                     @endauth
                 </div>
             @endforeach
-
         </div>
 
     </div>

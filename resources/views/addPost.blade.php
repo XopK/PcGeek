@@ -95,9 +95,12 @@
                         </div>
                     </div>
                     @error('component')
-                        <div class="alert alert-danger " role="alert">
+                    <div class="alert alert-danger alert-dismissible">
+                        <div class="alert-text">
                             {{ $message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                         </div>
+                    </div>
                     @enderror
                 </div>
                 <button class="w-100 mb-2 btn btn-lg rounded-3 btn-cost" type="submit">Опубликовать</button>
