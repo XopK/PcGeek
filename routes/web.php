@@ -29,6 +29,8 @@ Route::get('/forum', [PostController::class, 'showForum']);
 
 Route::get('/branch/{id}', [PostController::class, 'branchShow']);
 
+Route::get('/forum/sort/{sort}', [PostController::class, 'SortForum']);
+
 Route::middleware('checkRole:user')->group(function () {
 
     Route::get('/profile', [UserController::class, 'showUser']);
@@ -52,6 +54,8 @@ Route::middleware('checkRole:user')->group(function () {
     Route::get('/removeFavorite/{favorite}', [PostController::class, 'FavoriteRemove']);
 
     Route::delete('/deleteBranch/{delete}', [PostController::class, 'deleteBranch']);
+
+    Route::patch('/update/{update}', [PostController::class, 'updatePost']);
 
     Route::get('/editPost/{edit}', [PostController::class, 'editPost']);
 });

@@ -94,8 +94,23 @@ class PostController extends Controller
 
     public function showForum()
     {
-        $all_posts = Post::with(['user', 'tags', 'components'])->get();
+        $all_posts = Post::with(['user', 'tags', 'components'])->latest()->paginate(10);
+        
+        return view('forum', ['posts' => $all_posts]);
+    }
 
+    public function SortForum($sort)
+    {
+        if ($sort == 1){
+            $all_posts = Post::with(['user', 'tags', 'components'])->orderBy('title_post', 'asc')->paginate(10);
+        }elseif ($sort == 2) {
+            $all_posts = Post::with(['user', 'tags', 'components'])->join('users', 'posts.id_user', '=', 'users.id')->orderBy('users.name', 'asc')->paginate(10);
+        }else{
+            
+        }
+
+        
+        
         return view('forum', ['posts' => $all_posts]);
     }
 
@@ -220,15 +235,38 @@ class PostController extends Controller
         }
     }
 
-    public function deleteBranch(Post $delete){
+    public function deleteBranch(Post $delete)
+    {
         $delete->delete();
 
         return redirect()->back()->with('succes', 'Пост удален!');
     }
 
-    public function editPost($edit){
+    public function editPost($edit)
+    {
         $edit = Post::where('id', $edit)->with('tags')->get()->first();
-        dd($edit->tags);
-        return view ('editPost', ['edit' => $edit]);
+
+        return view('editPost', ['edit' => $edit]);
+    }
+
+    public function updatePost(Request $request, Post $update)
+    {
+        $request->validate([
+            'title_post' => 'required',
+            'description' => 'required',
+        ], [
+            "title_post.required" => "Поле обязательно для заполнения!",
+            "description.required" => "Поле обязательно для заполнения!",
+        ]);
+
+        $update_post = $request->all();
+
+        $update->fill([
+            'title_post' => $update_post['title_post'],
+            'description' => $update_post['description'],
+        ]);
+        $update->save();
+
+        return redirect()->back()->with('succes', 'Пост обновлен!');
     }
 }

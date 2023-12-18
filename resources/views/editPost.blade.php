@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
-    
+
     <title>PcGeek</title>
 </head>
 
@@ -20,10 +20,12 @@
         <x-header></x-header>
         <h1>Редактирование поста</h1>
         <div class="addPosts" style="margin-top: 30px">
-            <form action="/addPost/create" method="POST">
+            <form action="/update/{{ $edit->id }}" method="POST">
                 @csrf
+                @method('PATCH')
                 <div class="form-floating mb-3">
-                    <input type="text" name="title_post" value="{{$edit->title_post}}" class="form-control rounded-3" id="floatingInput">
+                    <input type="text" name="title_post" value="{{ $edit->title_post }}"
+                        class="form-control rounded-3" id="floatingInput">
                     <label for="floatingInput">Название поста</label>
                     @error('title_post')
                         <div class="alert alert-danger alert-dismissible">
@@ -35,7 +37,7 @@
                     @enderror
                 </div>
                 <div class="form-floating mb-3">
-                    <textarea name="description" style="height: 200px" class="form-control rounded-3" id="floatingInput" rows="5">{{$edit->description}}</textarea>
+                    <textarea name="description" style="height: 200px" class="form-control rounded-3" id="floatingInput" rows="5">{{ $edit->description }}</textarea>
                     <label for="floatingInput">Текст поста</label>
                     @error('description')
                         <div class="alert alert-danger alert-dismissible">
@@ -46,18 +48,7 @@
                         </div>
                     @enderror
                 </div>
-                <div class="form-floating mb-3">
-                    <input type="text" name="tags"  class="form-control rounded-3" id="floatingPassword">
-                    <label for="floatingPassword">Теги (вводите через запятую и без пробелов)</label>
-                    @error('tags')
-                        <div class="alert alert-danger alert-dismissible">
-                            <div class="alert-text">
-                                {{ $message }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                            </div>
-                        </div>
-                    @enderror
-                    </div>
+                
                 <button class="w-100 mb-2 btn btn-lg rounded-3 btn-cost" type="submit">Редактировать</button>
             </form>
         </div>

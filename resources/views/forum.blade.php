@@ -27,9 +27,9 @@
                             Дате добавления
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Названию</a></li>
-                            <li><a class="dropdown-item" href="#">Автору</a></li>
-                            <li><a class="dropdown-item" href="#">Кол-ву лайков</a></li>
+                            <li><a class="dropdown-item" href="/forum/sort/{{1}}">Названию</a></li>
+                            <li><a class="dropdown-item" href="/forum/sort/{{2}}">Автору</a></li>
+                            <li><a class="dropdown-item" href="/forum/sort/{{3}}">Кол-ву лайков</a></li>
                         </ul>
                     </div>
                     @auth
@@ -113,8 +113,10 @@
                     @endauth
                 </div>
             @endforeach
+            <div class="div mt-4" style="width: 92%">
+                {{ $posts->withQueryString()->links('pagination::bootstrap-5') }}</div>
         </div>
-
+        
     </div>
 </div>
 <x-footer></x-footer>
