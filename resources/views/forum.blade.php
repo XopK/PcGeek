@@ -24,14 +24,19 @@
                     <div class="dropdown">
                         сортировать по:
                         <button class="btn-filter" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Дате добавления
+                            Выберите фильтр
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/forum/sort/{{1}}">Названию</a></li>
-                            <li><a class="dropdown-item" href="/forum/sort/{{2}}">Автору</a></li>
-                            <li><a class="dropdown-item" href="/forum/sort/{{3}}">Кол-ву лайков</a></li>
+                            <li><a class="dropdown-item" href="/forum">Дате добавления</a></li>
+                            <li><a class="dropdown-item" href="/forum/sort/{{ 1 }}">Названию</a></li>
+                            <li><a class="dropdown-item" href="/forum/sort/{{ 2 }}">Кол-ву лайков</a></li>
                         </ul>
                     </div>
+                    <form class="d-flex" action="/forum/search" method="POST" role="search">
+                        @csrf
+                        <input class="form-control me-2 px-4" size="50%" type="search" placeholder="Поиск" name="tags" aria-label="Search">
+                        <button class="btn btn-cust" type="submit">Искать</button>
+                    </form>
                     @auth
                         <a href="/addPost" class="btn btn-cust">+ Добавить пост</a>
                     @endauth
@@ -47,8 +52,8 @@
                 @endif
                 @foreach ($posts as $post)
                     @php
-                    $date = $post->created_at;
-                            $newdate = date('d.m.Y', strtotime($date));
+                        $date = $post->created_at;
+                        $newdate = date('d.m.Y', strtotime($date));
                         if (Auth::user()) {
                             $idBranch = $post->id;
                             $currentUserFavorites = Auth::user()
@@ -94,7 +99,7 @@
                             </div>
                             @foreach ($post->components as $component)
                                 <div class="forum-image"><img
-                                        src="storage/imgComponents/{{ $component->image_components }}"
+                                        src="/storage/imgComponents/{{ $component->image_components }}"
                                         alt="{{ $component->image_components }}">
                                 </div>
                             @break
@@ -116,7 +121,7 @@
             <div class="div mt-4" style="width: 92%">
                 {{ $posts->withQueryString()->links('pagination::bootstrap-5') }}</div>
         </div>
-        
+
     </div>
 </div>
 <x-footer></x-footer>

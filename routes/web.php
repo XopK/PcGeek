@@ -31,6 +31,8 @@ Route::get('/branch/{id}', [PostController::class, 'branchShow']);
 
 Route::get('/forum/sort/{sort}', [PostController::class, 'SortForum']);
 
+Route::post('/forum/search', [PostController::class, 'searchTags']);
+
 Route::middleware('checkRole:user')->group(function () {
 
     Route::get('/profile', [UserController::class, 'showUser']);
@@ -58,13 +60,15 @@ Route::middleware('checkRole:user')->group(function () {
     Route::patch('/update/{update}', [PostController::class, 'updatePost']);
 
     Route::get('/editPost/{edit}', [PostController::class, 'editPost']);
+
+    Route::get('/editPost/deleteTag/{tagid}', [PostController::class, 'deleteTag']);
+
+    Route::patch('/editProfile/{userid}', [UserController::class, 'editProfile']);
 });
 
 Route::middleware('checkRole:admin')->group(function () {
 
-    Route::get("/admin", function () {
-        return view('admin.index');
-    });
+    Route::get("/admin", [PostController::class, 'showPostAdmin']);
 
     Route::get('/admin/components', [ComponentController::class, 'showComponents']);
 
@@ -77,6 +81,10 @@ Route::middleware('checkRole:admin')->group(function () {
     Route::post('/admin/addComponent/create', [ComponentController::class, 'addComponent']);
 
     Route::get('/admin/addComponent', [ComponentController::class, 'showAddComponent']);
+
+    Route::get('/admin/editAdminProfile', [UserController::class, 'AdminEdit']);
+
+    Route::patch('/editProfileAdmin/{userid}', [UserController::class, 'AdminUpdate']);
 });
 
 // Route::get('/config', function () {

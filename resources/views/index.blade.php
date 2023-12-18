@@ -222,7 +222,7 @@
             <div class="genres-block" style="margin-top: 30px;">
                 @foreach ($tags as $tag_name)
                     <div class="genres-card-index">
-                        <a href="#">
+                        <a href="#" >
                             <span>{{ $tag_name->title_tag }}</span>
                         </a>
                     </div>

@@ -25,7 +25,9 @@
             <img src="/images/profile.svg" alt="profile.svg">
             <h2 style="margin-top: 10px">{{ Auth::user()->login }}</h2>
             <span>на сайте с {{ $newdate }}</span>
-
+            <br>
+            <a href="#" class="btn" style="color: white" role="button" data-bs-target="#edit" data-bs-toggle="modal">Редактировать</a>
+            
             <div class="user-posts">
                 <h1 style="margin-bottom: 20px">Посты</h1>
                 @forelse ($user_posts as $post)
@@ -51,8 +53,9 @@
                                             src="/images/Group 39.svg" alt="Group 39.svg"></button>
 
                                 </form>
-                                <div class="btn buttons-profile p-2"><a type="button" href="/editPost/{{$post->id}}"><img
-                                            src="/images/edit.svg" alt="edit.svg"></a>
+                                <div class="btn buttons-profile p-2"><a type="button"
+                                        href="/editPost/{{ $post->id }}"><img src="/images/edit.svg"
+                                            alt="edit.svg"></a>
                                 </div>
                             </div>
 
@@ -99,5 +102,6 @@
     </div>
     <x-footer></x-footer>
 </body>
+<x-editpro></x-editpro>
 
 </html>

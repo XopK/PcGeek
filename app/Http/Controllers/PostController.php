@@ -20,7 +20,7 @@ class PostController extends Controller
     public function index()
     {
         $index_posts = Post::with('user', 'tags')->limit(3)->get();
-        $tags = Tag::all();
+        $tags = Tag::limit(6)->get();
         return view('index', ['index_posts' => $index_posts, 'tags' => $tags]);
     }
 
@@ -95,22 +95,21 @@ class PostController extends Controller
     public function showForum()
     {
         $all_posts = Post::with(['user', 'tags', 'components'])->latest()->paginate(10);
-        
+
         return view('forum', ['posts' => $all_posts]);
     }
 
     public function SortForum($sort)
     {
-        if ($sort == 1){
+        if ($sort == 1) {
             $all_posts = Post::with(['user', 'tags', 'components'])->orderBy('title_post', 'asc')->paginate(10);
-        }elseif ($sort == 2) {
-            $all_posts = Post::with(['user', 'tags', 'components'])->join('users', 'posts.id_user', '=', 'users.id')->orderBy('users.name', 'asc')->paginate(10);
-        }else{
-            
+        } elseif ($sort == 2) {
+            $all_posts = Post::with(['user', 'tags', 'components'])->withCount('likes')->orderBy('likes_count', 'desc')->paginate(10);
+        } else {
+            // Обработка других случаев, если необходимо
+            // Например, сортировка по умолчанию или обработка некорректных значений $sort
         }
 
-        
-        
         return view('forum', ['posts' => $all_posts]);
     }
 
@@ -261,12 +260,84 @@ class PostController extends Controller
 
         $update_post = $request->all();
 
-        $update->fill([
-            'title_post' => $update_post['title_post'],
-            'description' => $update_post['description'],
-        ]);
-        $update->save();
+        if ($update_post['tags']) {
+            $tags = explode(',', $update_post['tags']);
 
-        return redirect()->back()->with('succes', 'Пост обновлен!');
+            foreach ($tags as $tag) {
+                $existingTag = Tag::where('title_tag', $tag)->first();
+
+                if (!$existingTag) {
+                    // Если тег не существует, создаем новый
+                    $newTag = Tag::create([
+                        'title_tag' => $tag
+                    ]);
+
+                    // Создаем связь между постом и новым тегом
+                    TagPost::create([
+                        'id_tag' => $newTag->id,
+                        'id_post' => $update->id
+                    ]);
+                } else {
+                    // Если тег существует, проверяем, не создана ли уже связь между постом и тегом
+                    $existingTagPost = TagPost::where('id_tag', $existingTag->id)->where('id_post', $update->id)->first();
+
+                    if (!$existingTagPost) {
+                        // Если связи нет, создаем ее
+                        TagPost::create([
+                            'id_tag' => $existingTag->id,
+                            'id_post' => $update->id,
+                        ]);
+                    }
+                }
+            }
+            return redirect()->back()->with('succes', 'Тег(и) добавлен(ы)!');
+        } else {
+            // Если нет тегов, обновляем пост
+            $update->update([
+                'title_post' => $update_post['title_post'],
+                'description' => $update_post['description'],
+            ]);
+
+            return redirect()->back()->with('succes', 'Пост обновлен!');
+        }
+    }
+
+
+    public function deleteTag(Request $request, $tagid)
+    {
+
+        $deleteTag = tagPost::where('id_post', $request->input('param'))->where('id_tag', $tagid)->first();
+
+        if ($deleteTag) {
+            $deleteTag->delete();
+            return redirect()->back()->with('succes', 'Тег удален!');
+        } else {
+            return redirect()->back()->with('error', 'Ошибка удаления!');
+        }
+    }
+
+    public function searchTags(Request $request)
+    {
+        $tags = $request->input('tags');
+
+        $tagsArray = explode(',', $tags);
+
+        $posts = Post::with(['user', 'tags', 'components'])
+            ->where(function ($query) use ($tagsArray) {
+                foreach ($tagsArray as $tag) {
+                    $query->orWhereHas('tags', function ($q) use ($tag) {
+                        $q->where('title_tag', 'like', '%' . $tag . '%');
+                    });
+                }
+            })
+            ->paginate(10);
+
+        return view('forum', ['posts' => $posts]);
+    }
+
+    public function showPostAdmin(){
+        $all_posts = Post::with(['user', 'tags', 'components'])->latest()->paginate(10);
+
+        return view('admin.index', ['posts' => $all_posts]);
     }
 }
