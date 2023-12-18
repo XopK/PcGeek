@@ -22,8 +22,8 @@ class UserController extends Controller
     {
         $request->validate(
             [
-                "login" => "unique:users",
-                "email" => "unique:users",
+                "login" => "unique:users,login," . Auth::user()->id,
+                "email" => "unique:users,email," . Auth::user()->id,
                 "confirm_password" => "nullable|same:password",
             ],
             [
@@ -59,8 +59,8 @@ class UserController extends Controller
     {
         $request->validate(
             [
-                "login" => "unique:users",
-                "email" => "unique:users",
+                "login" => "unique:users,login," . Auth::user()->id,
+                "email" => "unique:users,email," . Auth::user()->id,
                 "confirm_password" => "nullable|same:password",
             ],
             [
