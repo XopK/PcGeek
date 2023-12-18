@@ -64,7 +64,7 @@
                             </td>
                             <td>
                                 @foreach ($post->components as $component)
-                                {{$component->title_component}}
+                                [{{$component->title_component}}]
                                 @endforeach
                             </td>
                         </tr>
