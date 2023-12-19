@@ -3,6 +3,8 @@
         <h1>PcGeek</h1>
         <h5>Форум компьютерной техники</h5>
         <br>
+        <a style="text-decoration: none; color:white" href="/sitemap"><span>Карта сайта</span></a>
+        <br>
         <span>Социальные сети</span>
         <ul class="links-social">
             <li><a href="#"><img src="/images/vk (1) (1).png" alt="vk.png"></a></li>

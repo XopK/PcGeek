@@ -33,6 +33,10 @@ Route::get('/forum/sort/{sort}', [PostController::class, 'SortForum']);
 
 Route::post('/forum/search', [PostController::class, 'searchTags']);
 
+Route::get('/sitemap', function(){
+    return view('sitemap');
+});
+
 Route::middleware('checkRole:user')->group(function () {
 
     Route::get('/profile', [UserController::class, 'showUser']);
